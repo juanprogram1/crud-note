@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Task</title>
+    <script type="module" crossorigin src="/assets/index-9eDqMedq.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C5A6qavQ.css">
+  </head>
+  <body>
+    <header id="bottomHeader">Notas🗒️</header>
+
+    <!-- Main -->
+    <main id="principal">
+      <button id="bottomShow" class="glowing-btn">
+        <span class="glowing-txt"
+          >CRE<span class="faulty-letter">ATE </span
+          ><span class="faulty-letter">NOT</span>E</span
+        >
+      </button>
+
+      <div id="hiddenContent" class="hidden">
+        <section class="sectionDad">
+          <!--  box1 -->
+          <div class="box1">
+            <!-- form -->
+            <form id="form" method="post">
+              <!-- form title -->
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Titulo..."
+              />
+              <!-- form date -->
+              <div id="date" class="nowDate"></div>
+              <!-- form text -->
+              <textarea
+                name="textarea"
+                id="writenote"
+                placeholder="Escribe tu nota..."
+              ></textarea>
+              <!-- form submit -->
+              <button
+                aria-label="Form save"
+                id="btnSave"
+                type="submit"
+                class="btnSave"
+              >
+                <!-- form save icon -->
+                <img src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20fill='%23ffffff'%20width='800px'%20height='800px'%20viewBox='-0.96%20-0.96%2033.92%2033.92'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20stroke='%23ffffff'%20stroke-width='0.48'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke='%23CCCCCC'%20stroke-width='0.064'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cpath%20d='M16%200c-8.836%200-16%207.163-16%2016s7.163%2016%2016%2016c8.837%200%2016-7.163%2016-16s-7.163-16-16-16zM16%2030.032c-7.72%200-14-6.312-14-14.032s6.28-14%2014-14%2014%206.28%2014%2014-6.28%2014.032-14%2014.032zM23%2015h-6v-6c0-0.552-0.448-1-1-1s-1%200.448-1%201v6h-6c-0.552%200-1%200.448-1%201s0.448%201%201%201h6v6c0%200.552%200.448%201%201%201s1-0.448%201-1v-6h6c0.552%200%201-0.448%201-1s-0.448-1-1-1z'/%3e%3c/g%3e%3c/svg%3e" alt="savePlus" />
+              </button>
+            </form>
+          </div>
+          <!-- form > box2 -->
+          <div class="box2" id="box2">
+            <!-- title-content -->
+            <div class="title-content">
+              <h1 class="title">Notas</h1>
+            </div>
+            <!-- text-content -->
+            <article id="text-content" class="text-content">
+              <!-- text-content-box -->
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- footer -->
+    <footer id="bottomFooter">
+      Copyright © 2024 | Web Developer: Juan David Carrillo
+    </footer>
+    <!-- script -->
+  </body>
+</html>
