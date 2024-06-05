@@ -1,3 +1,3 @@
-Enter web https://crud-note-zeta.vercel.app/
+Enter web https://crud-note-kappa.vercel.app/
 
 #project crud-note 
