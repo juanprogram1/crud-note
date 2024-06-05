@@ -2,6 +2,7 @@
     "compilerOptions": {
         "outDir": "./src/js",
         "rootDir": "./src",
+        "declarationDir": "./src/types",
         "module": "esnext",
         "target": "esnext",
         "moduleResolution": "node",
