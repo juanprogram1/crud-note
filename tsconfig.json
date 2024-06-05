@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "checkJs": true,
+        "declaration": true,
+        "declarationMap": true,
+        "declarationDir": "./src",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "strict": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "resolveJsonModule": true,
+        "downlevelIteration": false,
+        "inlineSourceMap": true,
+        "noEmitOnError": true,
+        "maxNodeModuleJsDepth": 1,
+        "pretty": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifierResolution": "node"
+    },
+    "exclude": [
+        "./src/**/*.js"
+    ],
+}
+/* Juan David Carrillo Anillo */

@@ -1,0 +1,7 @@
+dist/
+html
+src/js/
+node_modules
+package-lock.json
+package.json
+nodemon.json

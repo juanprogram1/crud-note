@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Task</title>
+  </head>
+  <body>
+    <header id="bottomHeader">Notes🗒️</header>
+
+    <!-- Main -->
+    <main id="principal">
+      <button id="bottomShow" class="glowing-btn">
+        <span class="glowing-txt"
+          >CRE<span class="faulty-letter">ATE </span
+          ><span class="faulty-letter">NOT</span>E</span
+        >
+      </button>
+
+      <div id="hiddenContent" class="hidden">
+        <section class="sectionDad">
+          <!--  box1 -->
+          <div class="box1">
+            <!-- form -->
+            <form id="form" method="post">
+              <!-- form title -->
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Titulo..."
+              />
+              <!-- form date -->
+              <div id="date" class="nowDate"></div>
+              <!-- form text -->
+              <textarea
+                name="textarea"
+                id="writenote"
+                placeholder="Escribe tu nota..."
+              ></textarea>
+              <!-- form submit -->
+              <button
+                aria-label="Form save"
+                id="btnSave"
+                type="submit"
+                class="btnSave"
+              >
+                <!-- form save icon -->
+                <img src="./public/plus-svgrepo-com.svg" alt="savePlus" />
+              </button>
+            </form>
+          </div>
+          <!-- form > box2 -->
+          <div class="box2" id="box2">
+            <!-- title-content -->
+            <div class="title-content">
+              <h1 class="title">Notas</h1>
+            </div>
+            <!-- text-content -->
+            <article id="text-content" class="text-content">
+              <!-- text-content-box -->
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+              <div class="text-content-box">
+                <h3 class="titleh3">title</h3>
+                <p class="date-text">viernes, 31/05/2024</p>
+                <p class="text-paragraph">
+                  This is a text content content content content...
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- footer -->
+    <footer id="bottomFooter">
+      Copyright © 2024 | Web Developer: Juan David Carrillo
+    </footer>
+    <!-- script -->
+    <script type="module" src="./src/index.ts"></script>
+  </body>
+</html>

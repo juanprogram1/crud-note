@@ -1,0 +1,53 @@
+{
+  "name": "frontend-typescript",
+  "version": "1.0.0",
+  "description": "My first job in development",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build:vite": "tsc && vite build",
+    "preview": "vite preview",
+    "build": "rimraf ./dist && npx tsc",
+    "start": "npm run build",
+    "start:node": "npm run build && node ./dist/index.js",
+    "clean": "rimraf ./dist ./types",
+    "start:dev": "npx nodemon --inspect",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --fix",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "practice",
+    "typescript",
+    "packages",
+    "tsconfig"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanprogram1/FolderTypeScript.git"
+  },
+  "author": "Juan David Carrillo Anillo",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/juanprogram1/FolderTypeScript/issues"
+  },
+  "homepage": "https://github.com/juanprogram1/FolderTypeScript#readme",
+  "devDependencies": {
+    "@types/node": "20.13.0",
+    "@typescript-eslint/eslint-plugin": "7.11.0",
+    "@typescript-eslint/parser": "7.11.0",
+    "eslint": "8.57.0",
+    "eslint-config-eslint": "10.0.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-json": "4.0.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "nodemon": "3.1.2",
+    "prettier": "3.3.0",
+    "rimraf": "5.0.7",
+    "ts-node": "10.9.2",
+    "husky": "9.0.11",
+    "vite": "^5.2.0"
+  }
+}

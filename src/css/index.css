@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url(./bottomCreateNote.css);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%)
+    center / cover no-repeat fixed;
+}
+
+header {
+  font-size: 52px;
+  text-align: center;
+  padding-top: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+footer {
+  padding: 1em;
+  font-size: 14px;
+  margin-top: auto;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+}
+
+main {
+  height: 840px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Content section and div */
+section {
+  height: 768px;
+  max-width: 1026px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+}
+
+.box1 {
+  width: 420px;
+  height: 520px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.box2 {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto Mono", cursive;
+  width: 450px;
+  height: 770px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Design responsive*/
+@media (max-width: 975px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .box1 {
+    justify-self: center;
+    width: 350px;
+    height: 350px;
+  }
+
+  .box2 {
+    width: 350px;
+    height: 410px;
+  }
+}
+
+/* Form of title, date, textNote*/
+input:first-child {
+  font-size: 20px;
+  width: 100%;
+  padding-top: 1rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 2px solid #ffffffc8;
+  color: azure;
+  font-family: "Roboto Mono", cursive;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(240, 255, 255);
+  font-size: 25px;
+  font-family: "Roboto Mono", cursive;
+  letter-spacing: 3px;
+  text-indent: 4px;
+}
+
+/* nowDate */
+
+.nowDate {
+  font-family: "Roboto Mono", cursive;
+  margin: 6px 0px 0px 2px;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: rgb(240, 255, 255);
+  text-indent: 5px;
+}
+.nowDate:hover {
+  cursor: default;
+}
+
+/* This is textarea of readNote */
+#writenote {
+  font-family: "Roboto Mono", cursive;
+  margin-top: 7px;
+  resize: none;
+  height: 371px;
+  width: 100%;
+  border-radius: 8px 8px 8px 8px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(50, 12, 12, 0.15);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+#writenote::placeholder {
+  font-size: 18px;
+  color: white;
+  font-family: "Roboto Mono", cursive;
+  letter-spacing: 1px;
+}
+
+/* writenote design responsive */
+
+@media (max-width: 975px) {
+  #writenote {
+    height: 200px;
+  }
+}
+
+/* Scrool of writenote */
+#writenote::-webkit-scrollbar-track {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+#writenote::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ffffff1a;
+}
+
+#writenote::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 213, 213, 0.6);
+  border-radius: 10px;
+}
+
+/* Bottom save tittle, nowDate, textNote */
+
+.btnSave {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid #ffffff66;
+}
+
+.btnSave img {
+  width: 40px;
+  height: 40px;
+  padding: 3px 0px 1px 0px;
+}
+
+.btnSave:hover {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.btnSave:active {
+  transform: scale(0.98);
+}
+
+/* media query text-content responsive design */
+@media (max-width: 975px) {
+  .text-content {
+    width: 90%;
+    height: 325px;
+    bottom: 12px;
+  }
+}
+
+.text-content {
+  display: grid;
+  width: 100%;
+  height: 750px;
+  resize: none;
+  outline: none;
+  overflow-y: scroll;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 10rem 10rem 10rem 10rem 10rem;
+  margin-top: -20px;
+}
+
+/* Scrool of text-content */
+.text-content::-webkit-scrollbar-track {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.text-content::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.102);
+}
+
+.text-content::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 213, 213, 0.2);
+  border-radius: 10px;
+}
+
+.text-content-box {
+  position: relative;
+  width: 90%;
+  height: 130px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  padding: 10px 0 0px 20px;
+  margin-top: 40px;
+  border-radius: 12px 12px 18px 18px;
+}
+
+/* text-content-box hover */
+.text-content-box:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.3);
+  transition-property: border-bottom;
+  transition-duration: 200ms;
+}
+
+/* information of text-content-box  titleh3 and Data nota*/
+
+.titleh3 {
+  position: relative;
+  width: 50%;
+  font-size: 20px;
+  bottom: 22px;
+  overflow: hidden;
+}
+
+.text-paragraph {
+  position: relative;
+  font-size: 14px;
+  right: 10px;
+  top: 5px;
+}
+
+.date-text {
+  position: absolute;
+  font-size: 14px;
+  right: 10px;
+  top: 0;
+}
