@@ -6,7 +6,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rimraf dist src/js src/types && tsc && vite build",
     "preview": "vite preview",
     "clean": "rimraf dist src/js src/types",
     "lint:fix": "eslint . --ext .ts --fix",
