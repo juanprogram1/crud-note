@@ -1,3 +1,4 @@
+
 {
     "compilerOptions": {
         "rootDir": "./src",
@@ -9,7 +10,7 @@
         "checkJs": true,
         "declaration": true,
         "declarationMap": true,
-        "declarationDir": "./src",
+        "declarationDir": "./src/types",
         "esModuleInterop": true,
         "noImplicitAny": true,
         "noImplicitReturns": true,
