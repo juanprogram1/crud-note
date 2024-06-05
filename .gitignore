@@ -8,10 +8,12 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 .husky
 dist-ssr
 *.local
+src/types
+
+
 
 
 # Editor directories and files
