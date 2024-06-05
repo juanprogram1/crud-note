@@ -6,7 +6,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && npx vite build",
     "preview": "vite preview",
     "start": "npm run build",
     "start:node": "npm run build && node ./dist/index.js",
