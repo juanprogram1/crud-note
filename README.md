@@ -20,7 +20,7 @@
 - [npm](https://www.npmjs.com/)
 
 
-1. Clone this repository ![alt text](image.png)
+1. Clone this repository 
 
 ```
 git clone https://github.com/juanprogram1/crud-note.git
