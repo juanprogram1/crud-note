@@ -1,7 +1,4 @@
 # CRUD-NOTE
-
-
-<h2> 📝 A simple note application that allows users to create, edit, and delete notes with his BD database. </h2>
 <a href= "https://crud-note-kappa.vercel.app/">🔗 <strong>Link to the project</strong></a>
 
 
