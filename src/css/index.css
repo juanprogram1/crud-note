@@ -257,30 +257,47 @@ input[type="text"]::placeholder {
 .text-content-box:hover {
   cursor: pointer;
   border-bottom: 2px solid rgb(255, 255, 255, 0.3);
-  transition-property: border-bottom;
-  transition-duration: 200ms;
 }
 
 /* information of text-content-box  titleh3 and Data nota*/
 
 .titleh3 {
   position: relative;
-  width: 50%;
-  font-size: 20px;
-  bottom: 22px;
+  width: 70%;
+  font-size: 18px;
+  bottom: 20px;
+  right: 10px;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .text-paragraph {
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   right: 10px;
-  top: 5px;
+  bottom: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 370px;
+}
+
+/* text-paragraph design responsive */
+@media (max-width: 975px) {
+  .text-paragraph {
+    width: 100%;
+  }
 }
 
 .date-text {
   position: absolute;
   font-size: 14px;
   right: 10px;
-  top: 0;
+  bottom: 85px;
 }
