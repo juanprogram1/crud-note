@@ -1,4 +1,6 @@
-# CRUD-NOTE
+# CRUD-NOTE 📝
+
+<h4> 📝 A simple note application that allows users to create, edit, and delete</h4>
 <a href= "https://crud-note-kappa.vercel.app/">🔗 <strong>Link to the project</strong></a>
 
 
