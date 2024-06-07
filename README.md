@@ -3,7 +3,6 @@
 <h4> 📝 A simple note application that allows users to create, edit, and delete</h4>
 <a href= "https://crud-note-kappa.vercel.app/">🔗 <strong>Link to the project</strong></a>
 
-
 <h2> 👨‍💻 For the project, I used the following technologies: </h2>
 
 - [__HTML__](https://developer.mozilla.org/en-US/docs/Web/HTML) HTML markup language
@@ -43,19 +42,6 @@ npm install
 ```
 npm run dev
 ```
-
-
-<h2> 📝 A simple note application that allows users to create, edit, and delete notes with his BD database.
-```
-# Install the dependencies
-npm install 
-```
-
-```
-# Run the project
-npm run dev
-```
-
 
 <h2> project features <strong>future project</strong> </h2>
 
