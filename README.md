@@ -1,11 +1,9 @@
 # CRUD-NOTE
 
----
 
 <h2> 📝 A simple note application that allows users to create, edit, and delete notes with his BD database. </h2>
 <a href= "https://crud-note-kappa.vercel.app/">🔗 <strong>Link to the project</strong></a>
 
----
 
 <h2> 👨‍💻 For the project, I used the following technologies: </h2>
 
@@ -16,7 +14,6 @@
 - [**vite (build tool)**](https://vitejs.dev/) vite is a build tool that makes it easy to build modern web applications using TypeScript, JavaScript
 - [**vercel (hosting)**](https://vercel.com/) vercel is a platform for building, shipping, and managing modern web apps and static sites.
 
----
 
 <h2> 🚀 For the project, I used the following technologies: </h2>
 
@@ -48,7 +45,6 @@ npm install
 npm run dev
 ```
 
----
 
 <h2> 📝 A simple note application that allows users to create, edit, and delete notes with his BD database.
 ```
@@ -61,7 +57,6 @@ npm install
 npm run dev
 ```
 
----
 
 <h2> project features <strong>future project</strong> </h2>
 
