@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 /* NowDate Form, send information from javascript to HTML */
 function getNowDate() {
   const date = document.getElementById("date") as HTMLElement;
@@ -16,21 +18,20 @@ function getNowDate() {
   return formattedDate;
 }
 
-//formHandler.ts
+// function to show the content of the form in the text-content-box
+function showBox2form(contentForm: string) {
+  // add text-content-box to the text-content article
+  const textContent = document.getElementById("text-content");
+  if (textContent) {
+    textContent.insertAdjacentHTML("afterbegin", contentForm); // insert the content HTML into the div
+  }
+}
 
-function handleForm(): void {
+//formHandler.ts
+function handleForm() {
   const form = document.getElementById("form") as HTMLFormElement;
   const title = document.getElementById("title") as HTMLInputElement;
   const textarea = document.getElementById("writenote") as HTMLTextAreaElement;
-
-  // fuction to show the content of the form in the text-content-box
-  function showBox2form(contentForm: string): void {
-    // add text-content-box to the text-content article
-    const textContent = document.getElementById("text-content");
-    if (textContent) {
-      textContent.insertAdjacentHTML("afterbegin", contentForm); // insert the content HTML into the div
-    }
-  }
 
   // Event listener for the submit button of the form
   form.addEventListener("submit", (e) => {
@@ -43,34 +44,37 @@ function handleForm(): void {
     const dateDMY = dateValue.split(",")[1];
 
     if (titleValue && textareaValue && dateDMY) {
-      // save the form data to localStorage
-      localStorage.setItem("title", titleValue); // save the form data to localStorage
-      localStorage.setItem("textarea", textareaValue); // save the form data to localStorage
-      localStorage.setItem("date", dateDMY); // save the form data to localStorage
+      // save the object to localStorage
 
-      const saveTitle = localStorage.getItem("title"); // recuperate the form data from localStorage for div text-content-box
-      const saveTextarea = localStorage.getItem("textarea"); // recuperate the form data from localStorage for div text-content-box
-      const saveDate = localStorage.getItem("date"); // recuperate the form data from localStorage for div text-content-box
+      // generate a random string to use as a key for localStorage
+      const ID = uuidv4();
 
-      // recuperate the form data from localStorage for div text-content-box
-      const contentForm = `
-          <div class="text-content-box">
-            <h3 class="titleh3">${saveTitle}</h3>
-            <p class="date-text">${saveDate}</p>
-            <p class="text-paragraph">${saveTextarea}</p>
-          </div>
+      const titleSet = `title${ID}`;
+      const textareaSet = `textarea${ID}`;
+      const dateSet = `date${ID}`;
+
+      localStorage.setItem(titleSet, titleValue);
+      localStorage.setItem(textareaSet, textareaValue);
+      localStorage.setItem(dateSet, dateDMY);
+
+      const contexform = `
+        <div class="text-content-box">
+          <h3 class="titleh3">${titleValue}</h3>
+          <p class="date-text">${dateDMY}</p>
+          <p class="text-paragraph">${textareaValue}</p>
+        </div>
       `;
 
-      // show the form in the text-content-box
-      showBox2form(contentForm);
+      // show the content of the form in the text-content-box
+      showBox2form(contexform);
 
       // clean the form
-      textarea.value = "";
-      title.value = "";
+      title.value = ""; // clean the title input
+      textarea.value = ""; // clean the textarea input
     } else {
       alert("Por favor rellene todos los campos!");
     }
   });
 }
 
-export { getNowDate, handleForm };
+export { getNowDate, handleForm, showBox2form };
