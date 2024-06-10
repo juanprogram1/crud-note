@@ -1,6 +1,6 @@
 import "./css/index.css";
 import { getNowDate, showBox2form } from "./showDate_showContent";
-import { v4 as uuidv4 } from "uuid";
+import type { Tasks, FormRegister } from "./designate";
 
 // bottomShow Form
 document.getElementById("bottomShow")?.addEventListener("click", function () {
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getNowDate(); // Get the current date and time
 });
 
+// saveForm function
 document.getElementById("btnSave")?.addEventListener("click", saveForm);
 
 // saveForm
@@ -62,27 +63,28 @@ function saveForm() {
   const titleValue: string = title.value;
   const textareaValue: string = textarea.value;
   const dateValue = getNowDate();
-  const dateDMY = dateValue.split(",")[1];
+  const dateDMY: string = dateValue.split(",")[1].trim();
 
   // if empty
-  if (titleValue === "" || textareaValue === "") {
-    alert("ingresa tu información");
-    return;
-  }
+  if (titleValue !== "" && textareaValue !== "") {
+    // generate a random string to use as a key for localStorage
 
-  // generate a random string to use as a key for localStorage
-  const ID = uuidv4();
+    // get the last ID from localStorage
+    let lastID = parseInt(localStorage.getItem("lastTaskID") || "0", 10);
+    lastID++; // increment the last ID
 
-  const titleSet = `title${ID}`;
-  const textareaSet = `textarea${ID}`;
-  const dateSet = `date${ID}`;
+    const ID = lastID.toString(); // Convierte de nuevo a string
 
-  // save the form register in localStorage
-  localStorage.setItem(titleSet, titleValue);
-  localStorage.setItem(textareaSet, textareaValue);
-  localStorage.setItem(dateSet, dateDMY);
+    const tasks: Tasks = {
+      title: titleValue,
+      textarea: textareaValue,
+      date: dateDMY,
+    };
 
-  const contexform = `
+    // save the form register in localStorage
+    localStorage.setItem(ID, JSON.stringify(tasks));
+
+    const contexform = `
       <div class="text-content-box">
         <h3 class="titleh3">${titleValue}</h3>
         <p class="date-text">${dateDMY}</p>
@@ -90,10 +92,43 @@ function saveForm() {
       </div>
     `;
 
-  // show the content of the form in the text-content-box
-  showBox2form(contexform);
+    // show the content of the form in the text-content-box
+    showBox2form(contexform);
 
-  // clean the form
-  title.value = ""; // clean the title input
-  textarea.value = ""; // clean the textarea input
+    // clean the form
+    title.value = ""; // clean the title input
+    textarea.value = ""; // clean the textarea input
+  } else {
+    alert("ingresa tu información");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  viewForm();
+});
+
+function viewForm() {
+  // get all keys from localStorage
+  const allKeys = Object.keys(localStorage);
+  console.log(allKeys);
+
+  // get all values from localStorage
+  const allValues = allKeys.map((key) => localStorage.getItem(key));
+
+  // parse all values to FormRegister
+  const allTasks: FormRegister[] = allValues.map((value) => JSON.parse(value!));
+
+  // map the register to the form for display
+  allTasks.map((task: FormRegister) => {
+    const contexform = `
+      <div class="text-content-box">
+        <h3 class="titleh3">${task.title}</h3>
+        <p class="date-text">${task.date}</p>
+        <p class="text-paragraph">${task.textarea}</p>
+      </div>
+    `;
+
+    // show the content of the form in the text-content-box
+    showBox2form(contexform);
+  });
 }
