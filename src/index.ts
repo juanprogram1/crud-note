@@ -1,5 +1,6 @@
 import "./css/index.css";
-import { handleForm, getNowDate } from "./btnSave";
+import { getNowDate, showBox2form } from "./showDate_showContent";
+import { v4 as uuidv4 } from "uuid";
 
 // bottomShow Form
 document.getElementById("bottomShow")?.addEventListener("click", function () {
@@ -48,7 +49,51 @@ document.addEventListener("DOMContentLoaded", () => {
   getNowDate(); // Get the current date and time
 });
 
-/* getFormData, send information from HTML to server */
-document.addEventListener("DOMContentLoaded", () => {
-  handleForm();
-});
+document.getElementById("btnSave")?.addEventListener("click", saveForm);
+
+// saveForm
+function saveForm() {
+  // call title and textarea from HTML
+  const title = document.getElementById("title") as HTMLInputElement;
+  const textarea = document.getElementById("writenote") as HTMLTextAreaElement;
+
+  // obtain the form data
+
+  const titleValue: string = title.value;
+  const textareaValue: string = textarea.value;
+  const dateValue = getNowDate();
+  const dateDMY = dateValue.split(",")[1];
+
+  // if empty
+  if (titleValue === "" || textareaValue === "") {
+    alert("ingresa tu información");
+    return;
+  }
+
+  // generate a random string to use as a key for localStorage
+  const ID = uuidv4();
+
+  const titleSet = `title${ID}`;
+  const textareaSet = `textarea${ID}`;
+  const dateSet = `date${ID}`;
+
+  // save the form register in localStorage
+  localStorage.setItem(titleSet, titleValue);
+  localStorage.setItem(textareaSet, textareaValue);
+  localStorage.setItem(dateSet, dateDMY);
+
+  const contexform = `
+      <div class="text-content-box">
+        <h3 class="titleh3">${titleValue}</h3>
+        <p class="date-text">${dateDMY}</p>
+        <p class="text-paragraph">${textareaValue}</p>
+      </div>
+    `;
+
+  // show the content of the form in the text-content-box
+  showBox2form(contexform);
+
+  // clean the form
+  title.value = ""; // clean the title input
+  textarea.value = ""; // clean the textarea input
+}
