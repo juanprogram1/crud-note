@@ -1,6 +1,7 @@
 import "./css/index.css";
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import type { Tasks, FormRegister } from "./designate";
+import { v4 as uuidv4 } from "uuid";
 
 // bottomShow Form
 document.getElementById("bottomShow")?.addEventListener("click", function () {
@@ -69,11 +70,7 @@ function saveForm() {
   if (titleValue !== "" && textareaValue !== "") {
     // generate a random string to use as a key for localStorage
 
-    // get the last ID from localStorage
-    let lastID = parseInt(localStorage.getItem("lastTaskID") || "0", 10);
-    lastID++; // increment the last ID
-
-    const ID = lastID.toString(); // Convierte de nuevo a string
+    const ID = uuidv4();
 
     const tasks: Tasks = {
       title: titleValue,
@@ -107,16 +104,17 @@ document.addEventListener("DOMContentLoaded", () => {
   viewForm();
 });
 
-function viewForm() {
+function viewForm(): void {
   // get all keys from localStorage
-  const allKeys = Object.keys(localStorage);
-  console.log(allKeys);
+  const allKeys: string[] = Object.keys(localStorage);
 
   // get all values from localStorage
-  const allValues = allKeys.map((key) => localStorage.getItem(key));
+  const allValues: (string | null)[] = allKeys.map((key) =>
+    localStorage.getItem(key),
+  );
 
   // parse all values to FormRegister
-  const allTasks: FormRegister[] = allValues.map((value) => JSON.parse(value!));
+  const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
 
   // map the register to the form for display
   allTasks.map((task: FormRegister) => {
