@@ -263,7 +263,7 @@ input[type="text"]::placeholder {
 
 .titleh3 {
   position: relative;
-  width: 70%;
+  width: 60%;
   font-size: 18px;
   bottom: 20px;
   right: 10px;
@@ -273,16 +273,17 @@ input[type="text"]::placeholder {
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .text-paragraph {
   position: relative;
   font-size: 13px;
   right: 10px;
-  bottom: 5px;
+  bottom: 24px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 370px;
