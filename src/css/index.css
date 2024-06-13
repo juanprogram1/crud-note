@@ -65,7 +65,7 @@ section {
   display: flex;
   justify-content: center;
   font-family: "Roboto Mono", cursive;
-  width: 450px;
+  width: 420px;
   height: 770px;
   background: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(20px);
@@ -91,7 +91,7 @@ section {
 
   .box2 {
     width: 350px;
-    height: 410px;
+    height: 390px;
   }
 }
 
@@ -202,7 +202,14 @@ input[type="text"]::placeholder {
   transform: scale(0.98);
 }
 
-/* media query text-content responsive design */
+/* media query text-content responsive design, title-content */
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+}
+
 @media (max-width: 975px) {
   .text-content {
     width: 90%;
@@ -253,6 +260,16 @@ input[type="text"]::placeholder {
   border-radius: 12px 12px 18px 18px;
 }
 
+@media (max-width: 975px) {
+  .text-content-box {
+    width: 90%;
+    overflow-y: hidden;
+    overflow-wrap: break-word;
+    height: 123px;
+    word-break: break-all;
+  }
+}
+
 /* text-content-box hover */
 .text-content-box:hover {
   cursor: pointer;
@@ -267,13 +284,11 @@ input[type="text"]::placeholder {
   font-size: 18px;
   bottom: 20px;
   right: 10px;
-  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .text-paragraph {
@@ -286,13 +301,16 @@ input[type="text"]::placeholder {
   -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 370px;
+  word-break: break-all;
 }
 
 /* text-paragraph design responsive */
 @media (max-width: 975px) {
   .text-paragraph {
     width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
   }
 }
 

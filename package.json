@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "rimraf dist src/js src/types && tsc && vite build",
     "preview": "vite preview",
-    "clean": "rimraf dist src/js src/types",
+    "clean": "rimraf dist src/js types",
     "lint:fix": "eslint . --ext .ts --fix",
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --fix",
     "prepare": "husky install"
