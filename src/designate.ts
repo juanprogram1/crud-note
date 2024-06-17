@@ -1,6 +1,6 @@
 // Type interface
 interface Tasks {
-  id?: string;
+  id?: number;
   title: string;
   textarea: string;
   date: string;

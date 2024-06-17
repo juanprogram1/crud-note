@@ -1,35 +1,45 @@
-import { v4 as uuidv4 } from "uuid";
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks } from "./designate";
 
-// saveForm
+// Función para obtener el contador actual del localStorage
+function getCardCounter() {
+  const counter = localStorage.getItem("cardCounter");
+  return counter ? parseInt(counter, 10) : 0;
+}
+
+// Función para incrementar el contador y guardarlo en localStorage
+function incrementCardCounter() {
+  const currentCounter = getCardCounter();
+  localStorage.setItem("cardCounter", String(currentCounter + 1));
+}
+
+// Modificación de la función saveForm para incluir la lógica de ID único
 function saveForm() {
-  // call title and textarea from HTML
+  // Obtener título y área de texto del formulario
   const title = document.getElementById("title") as HTMLInputElement;
   const textarea = document.getElementById("writenote") as HTMLTextAreaElement;
 
-  // obtain the form data
-
+  // Obtener los datos del formulario
   const titleValue: string = title.value;
   const textareaValue: string = textarea.value;
   const dateValue = getNowDate();
   const dateDMY: string = dateValue.split(",")[1].trim();
 
-  // if empty
+  // Verificar si están vacíos
   if (titleValue !== "" && textareaValue !== "") {
-    // generate a random string to use as a key for localStorage
-
-    const ID = uuidv4();
+    // Generar un ID único para esta tarea
+    const taskId = getCardCounter() + 1;
+    incrementCardCounter();
 
     const tasks: Tasks = {
+      id: taskId,
       title: titleValue,
       textarea: textareaValue,
       date: dateDMY,
     };
 
-    // save the form register in localStorage
-    localStorage.setItem(ID, JSON.stringify(tasks));
-
+    // Guardar el registro del formulario en localStorage
+    localStorage.setItem(`${taskId}`, JSON.stringify(tasks));
     const contexform = `
         <div class="text-content-box">
           <h3 class="titleh3">${titleValue}</h3>
@@ -38,12 +48,12 @@ function saveForm() {
         </div>
       `;
 
-    // show the content of the form in the text-content-box
+    // Mostrar el contenido del formulario en el text-content-box
     showBox2form(contexform);
 
-    // clean the form
-    title.value = ""; // clean the title input
-    textarea.value = ""; // clean the textarea input
+    // Limpiar el formulario
+    title.value = ""; // Limpiar el input del título
+    textarea.value = ""; // Limpiar el textarea
   } else {
     alert("ingresa tu información");
   }
