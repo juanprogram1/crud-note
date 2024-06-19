@@ -1,59 +1,59 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks } from "./designate";
 
-// Función para obtener el contador actual del localStorage
-function getCardCounter() {
-  const counter = localStorage.getItem("cardCounter");
-  return counter ? parseInt(counter, 10) : 0;
+// fuction to generate a unique id
+function generateIdUnique(): string {
+  // obtain the time current in milliseconds from the epoch Unix time
+  const timestamp = Date.now();
+
+  // convert the timestamp to seconds
+  const timestampSegundos = Math.floor(timestamp / 1000);
+
+  // generate a unique id
+  return `${timestampSegundos}`;
 }
 
-// Función para incrementar el contador y guardarlo en localStorage
-function incrementCardCounter() {
-  const currentCounter = getCardCounter();
-  localStorage.setItem("cardCounter", String(currentCounter + 1));
-}
-
-// Modificación de la función saveForm para incluir la lógica de ID único
 function saveForm() {
-  // Obtener título y área de texto del formulario
+  // call title and textarea from HTML
   const title = document.getElementById("title") as HTMLInputElement;
   const textarea = document.getElementById("writenote") as HTMLTextAreaElement;
 
-  // Obtener los datos del formulario
+  // obtain the form data
   const titleValue: string = title.value;
   const textareaValue: string = textarea.value;
   const dateValue = getNowDate();
   const dateDMY: string = dateValue.split(",")[1].trim();
 
-  // Verificar si están vacíos
+  // if empty
   if (titleValue !== "" && textareaValue !== "") {
-    // Generar un ID único para esta tarea
-    const taskId = getCardCounter() + 1;
-    incrementCardCounter();
+    // generate a random string to use as a key for localStorage
+
+    const idUser = generateIdUnique();
 
     const tasks: Tasks = {
-      id: taskId,
+      id: idUser,
       title: titleValue,
       textarea: textareaValue,
       date: dateDMY,
     };
 
-    // Guardar el registro del formulario en localStorage
-    localStorage.setItem(`${taskId}`, JSON.stringify(tasks));
-    const contexform = `
-        <div class="text-content-box">
-          <h3 class="titleh3">${titleValue}</h3>
-          <p class="date-text">${dateDMY}</p>
-          <p class="text-paragraph">${textareaValue}</p>
-        </div>
-      `;
+    // save the form register in localStorage
+    localStorage.setItem(idUser, JSON.stringify(tasks));
 
-    // Mostrar el contenido del formulario en el text-content-box
+    const contexform = `
+      <div class="text-content-box">
+        <h3 class="titleh3">${titleValue}</h3>
+        <p class="date-text">${dateDMY}</p>
+        <p class="text-paragraph">${textareaValue}</p>
+      </div>
+    `;
+
+    // show the content of the form in the text-content-box
     showBox2form(contexform);
 
-    // Limpiar el formulario
-    title.value = ""; // Limpiar el input del título
-    textarea.value = ""; // Limpiar el textarea
+    // clean the form
+    title.value = ""; // clean the title input
+    textarea.value = ""; // clean the textarea input
   } else {
     alert("ingresa tu información");
   }

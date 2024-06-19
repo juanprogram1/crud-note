@@ -1,4 +1,4 @@
-import { Tasks, FormRegister } from "./designate";
+import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
 
 function viewForm(): void {
@@ -12,9 +12,10 @@ function viewForm(): void {
 
   // parse all values to FormRegister
   const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
+  allTasks.sort((a, b) => a.id - b.id);
 
   // map the register to the form for display
-  allTasks.map((task: FormRegister) => {
+  allTasks.map((task: Tasks) => {
     const contexform = `
         <div class="text-content-box">
           <h3 class="titleh3">${task.title}</h3>
