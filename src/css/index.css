@@ -270,12 +270,6 @@ input[type="text"]::placeholder {
   }
 }
 
-/* text-content-box hover */
-.text-content-box:hover {
-  cursor: pointer;
-  border-bottom: 2px solid rgb(255, 255, 255, 0.3);
-}
-
 /* information of text-content-box  titleh3 and Data nota*/
 
 .titleh3 {
@@ -319,4 +313,39 @@ input[type="text"]::placeholder {
   font-size: 14px;
   right: 10px;
   bottom: 85px;
+}
+
+/* buttom edit and delete of text-content-box */
+.btnsEditDelete {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 10rem;
+  top: 6px;
+}
+
+.btnDelete {
+  background-color: #af002d;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnDelete:hover {
+  position: relative;
+  transform: translateY(-0.9rem);
+  cursor: pointer;
+}
+
+.btnEdit {
+  position: relative;
+  background-color: blue;
+  color: white;
+  right: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.btnEdit:hover {
+  transform: translateY(-0.9rem);
+  cursor: pointer;
 }
