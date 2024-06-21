@@ -252,9 +252,9 @@ input[type="text"]::placeholder {
   position: relative;
   width: 90%;
   height: 130px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.45);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(87, 87, 87, 0.12);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
   padding: 10px 0 0px 20px;
   margin-top: 40px;
   border-radius: 12px 12px 18px 18px;
@@ -292,7 +292,7 @@ input[type="text"]::placeholder {
   bottom: 24px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-all;
@@ -315,37 +315,130 @@ input[type="text"]::placeholder {
   bottom: 85px;
 }
 
-/* buttom edit and delete of text-content-box */
-.btnsEditDelete {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: row-reverse;
-  gap: 10rem;
-  top: 6px;
+/* buttom edit of text-content-box */
+
+.container {
+  position: relative; /* posiciona el contenedor */
+  bottom: 36px;
 }
 
-.btnDelete {
-  background-color: #af002d;
+.barra {
+  /* barra de editar */
+  position: absolute;
+  top: 20px;
+  right: 72%;
+  width: 25%;
+  height: 8px;
+  border-bottom: 8px solid rgb(0, 174, 255);
+  box-shadow: 0 0 5px rgb(0, 174, 255, 0.7);
+  transition: transform 0.1s ease-in-out; /* efecto de slide */
+  border-radius: 25px 25px 0 0;
+}
+
+.boton {
+  /* boton de editar */
+  font-family: "Roboto Mono", cursive;
   color: white;
-  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  position: absolute;
+  width: 25%;
+  top: 8px;
+  right: 72%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out; /* efecto de aparición */
+  border: none;
+  border-radius: 2px;
+  background: rgb(0, 174, 255);
 }
 
-.btnDelete:hover {
-  position: relative;
-  transform: translateY(-0.9rem);
-  cursor: pointer;
+.container:hover .barra {
+  /* efecto de slide */
+  transform: translateY(-150%); /* se desliza hacia arriba */
 }
 
-.btnEdit {
-  position: relative;
-  background-color: blue;
+.container:hover .boton {
+  /* efecto de aparición */
+  opacity: 1; /* se muestra el botón */
+}
+
+/* buttom mostrar of text-content-box */
+
+.barraMostrar {
+  /* barra de borrar */
+  position: absolute;
+  top: 20px;
+  right: 41%;
+  width: 25%;
+  height: 8px;
+  border-bottom: 8px solid rgba(71, 236, 30, 0.829);
+  box-shadow: 0 0 5px rgba(0, 241, 0, 0.5);
+  transition: transform 0.1s ease-in-out; /* efecto de slide */
+  border-radius: 25px 25px 0 0;
+}
+
+.botonMostrar {
+  /* boton de borrar */
+  font-family: "Roboto Mono", cursive;
   color: white;
-  right: 20px;
-  transition: all 0.4s ease-in-out;
+  font-weight: bold;
+  position: absolute;
+  top: 8px;
+  right: 41%;
+  width: 25%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out; /* ee */
+  border: none;
+  border-radius: 2px;
+  background: rgb(82, 223, 17);
 }
 
-.btnEdit:hover {
-  transform: translateY(-0.9rem);
-  cursor: pointer;
+.container:hover .barraMostrar {
+  /* efect of slide */
+  transform: translateY(-150%); /* se desliza hacia arriba */
+}
+
+.container:hover .botonMostrar {
+  /* efecto of appearance */
+  opacity: 1; /* show delete button */
+}
+
+/* buttom delete of text-content-box */
+
+.barraDelete {
+  /* barra de borrar */
+  position: absolute;
+  top: 20px;
+  right: 9%;
+  width: 25%;
+  height: 8px;
+  border-bottom: 8px solid rgba(236, 30, 30, 0.692);
+  box-shadow: 0 0 5px rgba(241, 0, 0, 0.5);
+  transition: transform 0.1s ease-in-out; /* efecto de slide */
+  border-radius: 25px 25px 0 0;
+}
+
+.botonDelete {
+  /* boton de borrar */
+  font-family: "Roboto Mono", cursive;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 8px;
+  right: 9%;
+  width: 25%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out; /* ee */
+  border: none;
+  border-radius: 2px;
+  background: rgb(236, 30, 30);
+}
+
+.container:hover .barraDelete {
+  /* efect of slide */
+  transform: translateY(-150%); /* se desliza hacia arriba */
+}
+
+.container:hover .botonDelete {
+  /* efecto of appearance */
+  opacity: 1; /* show delete button */
 }

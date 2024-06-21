@@ -1,9 +1,16 @@
 // Type interface
 interface Tasks {
-  id: number | string;
+  id: number;
   title: string;
   textarea: string;
   date: string;
 }
 
-export type { Tasks };
+interface Tasks2 {
+  id: string;
+  title: string;
+  textarea: string;
+  date: string;
+}
+
+export type { Tasks, Tasks2 };

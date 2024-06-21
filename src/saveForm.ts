@@ -1,5 +1,5 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
-import { Tasks } from "./designate";
+import { Tasks2 } from "./designate";
 
 // fuction to generate a unique id
 function generateIdUnique(): string {
@@ -30,7 +30,7 @@ function saveForm() {
 
     const idUser = generateIdUnique();
 
-    const tasks: Tasks = {
+    const tasks: Tasks2 = {
       id: idUser,
       title: titleValue,
       textarea: textareaValue,
