@@ -45,6 +45,18 @@ function saveForm() {
         <h3 class="titleh3">${titleValue}</h3>
         <p class="date-text">${dateDMY}</p>
         <p class="text-paragraph">${textareaValue}</p>
+        <div class="container">
+                  <div class="barra"></div>
+                  <button class="boton" id="editar">Editar</button>
+                </div>
+                <div class="container">
+                  <div class="barraMostrar"></div>
+                  <button class="botonMostrar" id="Mostrar">Mostrar</button>
+                </div>
+                <div class="container">
+                  <div class="barraDelete"></div>
+                  <button class="botonDelete" id="borrar">Borrar</button>
+                </div>
       </div>
     `;
 

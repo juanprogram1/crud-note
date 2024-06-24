@@ -21,6 +21,18 @@ function viewForm(): void {
           <h3 class="titleh3">${task.title}</h3>
           <p class="date-text">${task.date}</p>
           <p class="text-paragraph">${task.textarea}</p>
+          <div class="container">
+                  <div class="barra"></div>
+                  <button class="boton" id="editar">Editar</button>
+                </div>
+                <div class="container">
+                  <div class="barraMostrar"></div>
+                  <button class="botonMostrar" id="Mostrar">Mostrar</button>
+                </div>
+                <div class="container">
+                  <div class="barraDelete"></div>
+                  <button class="botonDelete" id="borrar">Borrar</button>
+                </div>
         </div>
       `;
 

@@ -5,13 +5,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #5fe4c552;
+  --color-secondary: #6690ff;
+  --color-tertiary: #d6e4ff;
+}
+
 body {
   margin: 0;
   color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%)
+  background: linear-gradient(130deg, #18f7ffc2, #af002d 41.07%, #319197 76.05%)
     center / cover no-repeat fixed;
 }
 
@@ -53,7 +59,7 @@ section {
 .box1 {
   width: 420px;
   height: 520px;
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(320deg, #699ff08f 50%, #18e0d6b9 100%);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.6);
@@ -67,7 +73,7 @@ section {
   font-family: "Roboto Mono", cursive;
   width: 420px;
   height: 770px;
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(320deg, #699ff052 50%, #18e0d6c7 100%);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.6);
@@ -244,7 +250,7 @@ input[type="text"]::placeholder {
 }
 
 .text-content::-webkit-scrollbar-thumb {
-  background-color: rgb(217, 213, 213, 0.2);
+  background-color: rgb(217, 213, 213, 0.5);
   border-radius: 10px;
 }
 
@@ -252,9 +258,9 @@ input[type="text"]::placeholder {
   position: relative;
   width: 90%;
   height: 130px;
-  border: 1px solid rgba(87, 87, 87, 0.12);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--color-tertiary);
+  background-color: var(--color-primary);
+  box-shadow: 0 0 2px var(--color-secondary);
   padding: 10px 0 0px 20px;
   margin-top: 40px;
   border-radius: 12px 12px 18px 18px;
@@ -276,7 +282,7 @@ input[type="text"]::placeholder {
   position: relative;
   width: 60%;
   font-size: 18px;
-  bottom: 20px;
+  bottom: 24px;
   right: 10px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -296,6 +302,7 @@ input[type="text"]::placeholder {
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-all;
+  white-space: pre-wrap;
 }
 
 /* text-paragraph design responsive */
@@ -304,7 +311,12 @@ input[type="text"]::placeholder {
     width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
+  }
+
+  .date-text {
+    position: absolute;
+    top: -7px;
   }
 }
 
@@ -317,20 +329,15 @@ input[type="text"]::placeholder {
 
 /* buttom edit of text-content-box */
 
-.container {
-  position: relative; /* container  position */
-  bottom: 36px;
-}
-
 .barra {
   /* edit bar */
   position: absolute;
-  top: 20px;
-  right: 72%;
+  bottom: 0;
+  right: 68%;
   width: 25%;
   height: 8px;
-  border-bottom: 8px solid rgb(0, 174, 255);
-  box-shadow: 0 0 5px rgb(0, 174, 255, 0.7);
+  border-bottom: 8px solid rgba(0, 205, 255, 0.702);
+  box-shadow: 0 0 5px #00aeffb3;
   transition: transform 0.1s ease-in-out; /* effect of slide */
   border-radius: 2px 2px 0 0;
 }
@@ -342,8 +349,8 @@ input[type="text"]::placeholder {
   font-weight: bold;
   position: absolute;
   width: 25%;
-  top: 8px;
-  right: 72%;
+  bottom: 0;
+  right: 68%;
   opacity: 0;
   transition: opacity 0.1s ease-in-out; /* effect of appearance */
   border: none;
@@ -353,12 +360,13 @@ input[type="text"]::placeholder {
 
 .container:hover .barra {
   /* effect of slide */
-  transform: translateY(-150%); /* slide to up */
+  transform: translateY(-120%); /* slide to up */
 }
 
 .container:hover .boton {
   /* effect of appearance */
   opacity: 1; /* button in displayed */
+  cursor: pointer;
 }
 
 /* buttom view of text-content-box */
@@ -366,8 +374,8 @@ input[type="text"]::placeholder {
 .barraMostrar {
   /* show bar */
   position: absolute;
-  top: 20px;
-  right: 41%;
+  bottom: 0;
+  right: 37%;
   width: 25%;
   height: 8px;
   border-bottom: 8px solid rgba(71, 236, 30, 0.829);
@@ -382,8 +390,8 @@ input[type="text"]::placeholder {
   color: white;
   font-weight: bold;
   position: absolute;
-  top: 8px;
-  right: 41%;
+  bottom: 0;
+  right: 37%;
   width: 25%;
   opacity: 0;
   transition: opacity 0.1s ease-in-out; /* effect of appearance */
@@ -400,6 +408,7 @@ input[type="text"]::placeholder {
 .container:hover .botonMostrar {
   /* efecto of appearance */
   opacity: 1; /* show show button */
+  cursor: pointer;
 }
 
 /* buttom delete of text-content-box */
@@ -407,8 +416,8 @@ input[type="text"]::placeholder {
 .barraDelete {
   /* delete bar */
   position: absolute;
-  top: 20px;
-  right: 9%;
+  bottom: 0;
+  right: 6%;
   width: 25%;
   height: 8px;
   border-bottom: 8px solid rgba(236, 30, 30, 0.692);
@@ -423,8 +432,8 @@ input[type="text"]::placeholder {
   color: white;
   font-weight: bold;
   position: absolute;
-  top: 8px;
-  right: 9%;
+  bottom: 0;
+  right: 6%;
   width: 25%;
   opacity: 0;
   transition: opacity 0.1s ease-in-out; /* effect of appearance */
@@ -435,10 +444,11 @@ input[type="text"]::placeholder {
 
 .container:hover .barraDelete {
   /* efect of slide */
-  transform: translateY(-150%); /* slide to up */
+  transform: translateY(-100%); /* slide to up */
 }
 
 .container:hover .botonDelete {
   /* effect of appearance */
   opacity: 1; /* show delete button */
+  cursor: pointer;
 }
