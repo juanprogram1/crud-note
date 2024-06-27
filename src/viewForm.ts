@@ -23,19 +23,20 @@ function viewForm(): void {
           <p class="text-paragraph">${task.textarea}</p>
           <div class="container">
                   <div class="barra"></div>
-                  <button class="boton" id="editar">Editar</button>
+                  <button class="botonEdit">Editar</button>
                 </div>
                 <div class="container">
                   <div class="barraMostrar"></div>
-                  <button class="botonMostrar" id="Mostrar">Mostrar</button>
+                  <button class="botonShow">Mostrar</button>
                 </div>
                 <div class="container">
                   <div class="barraDelete"></div>
-                  <button class="botonDelete" id="borrar">Borrar</button>
+                  <button class="botonDelete">Borrar</button>
                 </div>
         </div>
       `;
 
+    document.querySelectorAll(".botonDelete").forEach((e) => console.log(e));
     // show the content of the form in the text-content-box
     showBox2form(contexform);
   });
