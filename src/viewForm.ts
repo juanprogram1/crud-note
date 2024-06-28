@@ -1,7 +1,7 @@
 import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
 
-function viewForm(): void {
+function viewForm() {
   // get all keys from localStorage
   const allKeys: string[] = Object.keys(localStorage);
 
@@ -36,7 +36,6 @@ function viewForm(): void {
         </div>
       `;
 
-    document.querySelectorAll(".botonDelete").forEach((e) => console.log(e));
     // show the content of the form in the text-content-box
     showBox2form(contexform);
   });

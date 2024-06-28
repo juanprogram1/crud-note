@@ -1,5 +1,9 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
+import { viewForm } from "./viewForm";
+
+// viewForm function
+viewForm();
 
 // fuction to generate a unique id
 function generateIdUnique(): string {
