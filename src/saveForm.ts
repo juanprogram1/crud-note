@@ -1,6 +1,7 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
 import { viewForm } from "./viewForm";
+import { initializeButtonEvents } from "./bottomsDelete";
 
 // viewForm function
 viewForm();
@@ -65,13 +66,16 @@ function saveForm() {
     `;
 
     // show the content of the form in the text-content-box
+
     showBox2form(contexform);
+
     // clean the form
     title.value = ""; // clean the title input
     textarea.value = ""; // clean the textarea input
   } else {
     alert("ingresa tu información");
   }
+  initializeButtonEvents();
 }
 
 export { saveForm };

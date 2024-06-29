@@ -1,7 +1,6 @@
 import "./css/index.css";
 import { getNowDate } from "./showDate_showContent";
 import { saveForm } from "./saveForm";
-import { initializeButtonEvents } from "./bottomsDelete";
 
 // bottomShow Form
 document.getElementById("bottomShow")?.addEventListener("click", function () {
@@ -52,8 +51,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // saveForm function
 document.getElementById("btnSave")?.addEventListener("click", saveForm);
-
-// deleteForm function
-document.addEventListener("DOMContentLoaded", () => {
-  initializeButtonEvents();
-});
