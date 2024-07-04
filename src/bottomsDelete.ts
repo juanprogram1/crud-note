@@ -6,21 +6,32 @@ function initializeButtonEvents(): void {
   editButtons.forEach((button) => {
     button.addEventListener("click", () => {
       console.log("Editar");
-      // Implementa la lógica para editar la nota
     });
   });
 
   showButtons.forEach((button) => {
     button.addEventListener("click", () => {
       console.log("Mostrar");
-      // Implementa la lógica para mostrar la nota
     });
   });
 
   deleteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      console.log("Eliminar");
-      // Implementa la lógica para eliminar la nota
+    button.addEventListener("click", (event): void => {
+      event.preventDefault();
+      const keysDelete: string = button.getAttribute("data-key") as string;
+      const parentDiv: HTMLDivElement = document.querySelector(
+        `[data-key="${keysDelete}"]`,
+      ) as HTMLDivElement;
+
+      if (localStorage.getItem(keysDelete)) {
+        // delete the item from localStorage
+        localStorage.removeItem(keysDelete);
+      }
+
+      if (parentDiv) {
+        // delete the div parent Html
+        parentDiv.remove();
+      }
     });
   });
 }

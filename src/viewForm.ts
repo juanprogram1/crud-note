@@ -17,21 +17,21 @@ function viewForm() {
   // map the register to the form for display
   allTasks.map((task: Tasks) => {
     const contexform = `
-        <div class="text-content-box">
+        <div class="text-content-box" data-key="${task.id}">
           <h3 class="titleh3">${task.title}</h3>
           <p class="date-text">${task.date}</p>
           <p class="text-paragraph">${task.textarea}</p>
           <div class="container">
                   <div class="barra"></div>
-                  <button class="botonEdit">Editar</button>
+                  <button data-key="${task.id}" class="botonEdit">Editar</button>
                 </div>
                 <div class="container">
                   <div class="barraMostrar"></div>
-                  <button class="botonShow">Mostrar</button>
+                  <button data-key="${task.id}" class="botonShow">Mostrar</button>
                 </div>
                 <div class="container">
                   <div class="barraDelete"></div>
-                  <button class="botonDelete">Borrar</button>
+                  <button data-key="${task.id}" class="botonDelete">Borrar</button>
                 </div>
         </div>
       `;

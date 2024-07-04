@@ -46,21 +46,21 @@ function saveForm() {
     localStorage.setItem(idUser, JSON.stringify(tasks));
 
     const contexform = `
-      <div class="text-content-box">
+      <div class="text-content-box" data-key="${idUser}">
         <h3 class="titleh3">${titleValue}</h3>
         <p class="date-text">${dateDMY}</p>
         <p class="text-paragraph">${textareaValue}</p>
-        <div class="container">
+                <div class="container">
                   <div class="barra"></div>
-                  <button class="botonEdit">Editar</button>
+                  <button data-key="${idUser}" class="botonEdit">Editar</button>
                 </div>
                 <div class="container">
                   <div class="barraMostrar"></div>
-                  <button class="botonShow">Mostrar</button>
+                  <button data-key="${idUser}" class="botonShow">Mostrar</button>
                 </div>
                 <div class="container">
                   <div class="barraDelete"></div>
-                  <button class="botonDelete">Borrar</button>
+                  <button data-key="${idUser}" class="botonDelete">Borrar</button>
                 </div>
       </div>
     `;
