@@ -21,13 +21,13 @@ function viewForm() {
           <h3 class="titleh3">${task.title}</h3>
           <p class="date-text">${task.date}</p>
           <p class="text-paragraph">${task.textarea}</p>
-          <div class="container">
-                  <div class="barra"></div>
-                  <button data-key="${task.id}" class="botonEdit">Editar</button>
-                </div>
                 <div class="container">
                   <div class="barraMostrar"></div>
                   <button data-key="${task.id}" class="botonShow">Mostrar</button>
+                </div>
+                <div class="container">
+                  <div class="barra"></div>
+                  <button data-key="${task.id}" class="botonEdit">Editar</button>
                 </div>
                 <div class="container">
                   <div class="barraDelete"></div>

@@ -448,3 +448,68 @@ input[type="text"]::placeholder {
   opacity: 1; /* show delete button */
   cursor: pointer;
 }
+
+/* Bottom show the content of the form in the text-content-box */
+
+.boxShow {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  width: 500px;
+  height: 770px;
+  background: linear-gradient(320deg, #5d89ca8f 50%, #18e0d6b9 100%);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+}
+
+.boxShow-content {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.boxShow-content-title {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  width: 87%;
+  margin: auto;
+  height: 52px;
+  font-size: 12px;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  bottom: 15px;
+}
+
+.boxShow-date {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  margin: auto;
+  top: 10px;
+  left: 78px;
+  width: 70%;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.boxShow-content-text {
+  position: relative;
+  margin: auto;
+  width: 98%;
+}
+
+.boxShow-text-paragraph {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  padding: 10px;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  height: 698px;
+}

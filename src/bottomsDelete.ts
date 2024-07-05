@@ -10,8 +10,21 @@ function initializeButtonEvents(): void {
   });
 
   showButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      console.log("Mostrar");
+    button.addEventListener("click", (e): void => {
+      e.preventDefault();
+      const box1 = document.querySelector(".box1") as HTMLDivElement;
+      const boxShow = document.querySelector(".boxShow") as HTMLDivElement;
+
+      if (box1 && boxShow) {
+        //  hidden the box1 and show the hidden content
+        box1.classList.add("hidden");
+        boxShow.classList.remove("hidden");
+
+        boxShow.animate([{ opacity: 0 }, { opacity: 1 }], {
+          duration: 400,
+          easing: "ease-in-out",
+        });
+      }
     });
   });
 

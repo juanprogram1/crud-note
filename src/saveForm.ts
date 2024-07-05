@@ -51,12 +51,12 @@ function saveForm() {
         <p class="date-text">${dateDMY}</p>
         <p class="text-paragraph">${textareaValue}</p>
                 <div class="container">
-                  <div class="barra"></div>
-                  <button data-key="${idUser}" class="botonEdit">Editar</button>
-                </div>
-                <div class="container">
                   <div class="barraMostrar"></div>
                   <button data-key="${idUser}" class="botonShow">Mostrar</button>
+                </div>
+                <div class="container">
+                  <div class="barra"></div>
+                  <button data-key="${idUser}" class="botonEdit">Editar</button>
                 </div>
                 <div class="container">
                   <div class="barraDelete"></div>
