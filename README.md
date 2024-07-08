@@ -28,14 +28,14 @@ git clone https://github.com/juanprogram1/crud-note.git
 2. Go to the project directory
 
 ```
-cd crud-note
+cd crud-notess
 ```
 
 3. Install the dependencies
 
 ```
 npm install
-```
+```1
 
 4. Run the project
 
