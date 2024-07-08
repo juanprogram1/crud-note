@@ -21,7 +21,8 @@ function showBox2form(contentForm: string) {
   // add text-content-box to the text-content article
   const textContent = document.getElementById("text-content");
   if (textContent) {
-    textContent.insertAdjacentHTML("afterbegin", contentForm); // insert the content HTML into the div
+    textContent.insertAdjacentHTML("afterbegin", contentForm);
+    // insert the content HTML into the div
   }
 }
 

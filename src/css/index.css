@@ -5,13 +5,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #5fe4c552;
+  --color-secondary: #6690ff;
+  --color-tertiary: #d6e4ff;
+}
+
 body {
   margin: 0;
   color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%)
+  background: linear-gradient(130deg, #18f7ffc2, #af002d 41.07%, #319197 76.05%)
     center / cover no-repeat fixed;
 }
 
@@ -53,9 +59,7 @@ section {
 .box1 {
   width: 420px;
   height: 520px;
-  background: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: linear-gradient(320deg, #699ff08f 50%, #18e0d6b9 100%);
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   padding: 10px;
@@ -67,9 +71,7 @@ section {
   font-family: "Roboto Mono", cursive;
   width: 420px;
   height: 770px;
-  background: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: linear-gradient(320deg, #699ff052 50%, #18e0d6c7 100%);
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   align-items: center;
@@ -244,7 +246,7 @@ input[type="text"]::placeholder {
 }
 
 .text-content::-webkit-scrollbar-thumb {
-  background-color: rgb(217, 213, 213, 0.2);
+  background-color: rgb(217, 213, 213, 0.5);
   border-radius: 10px;
 }
 
@@ -252,9 +254,9 @@ input[type="text"]::placeholder {
   position: relative;
   width: 90%;
   height: 130px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.45);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--color-tertiary);
+  background-color: var(--color-primary);
+  box-shadow: 0 0 2px var(--color-secondary);
   padding: 10px 0 0px 20px;
   margin-top: 40px;
   border-radius: 12px 12px 18px 18px;
@@ -270,19 +272,13 @@ input[type="text"]::placeholder {
   }
 }
 
-/* text-content-box hover */
-.text-content-box:hover {
-  cursor: pointer;
-  border-bottom: 2px solid rgb(255, 255, 255, 0.3);
-}
-
 /* information of text-content-box  titleh3 and Data nota*/
 
 .titleh3 {
   position: relative;
   width: 60%;
   font-size: 18px;
-  bottom: 20px;
+  bottom: 24px;
   right: 10px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -298,10 +294,11 @@ input[type="text"]::placeholder {
   bottom: 24px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-all;
+  white-space: pre-wrap;
 }
 
 /* text-paragraph design responsive */
@@ -310,7 +307,12 @@ input[type="text"]::placeholder {
     width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
+  }
+
+  .date-text {
+    position: absolute;
+    top: -7px;
   }
 }
 
@@ -319,4 +321,195 @@ input[type="text"]::placeholder {
   font-size: 14px;
   right: 10px;
   bottom: 85px;
+}
+
+/* buttom edit of text-content-box */
+
+.barra {
+  /* edit bar */
+  position: absolute;
+  bottom: 0;
+  right: 68%;
+  width: 25%;
+  height: 8px;
+  border-bottom: 8px solid rgba(0, 205, 255, 0.702);
+  box-shadow: 0 0 5px #00aeffb3;
+  transition: transform 0.1s ease-in-out; /* effect of slide */
+  border-radius: 2px 2px 0 0;
+}
+
+.botonEdit {
+  /* edit button */
+  font-family: "Roboto Mono", cursive;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  right: 68%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out; /* effect of appearance */
+  border: none;
+  border-radius: 2px;
+  background: rgb(0, 174, 255);
+}
+
+.container:hover .barra {
+  /* effect of slide */
+  transform: translateY(-120%); /* slide to up */
+}
+
+.container:hover .botonEdit {
+  /* effect of appearance */
+  opacity: 1; /* button in displayed */
+  cursor: pointer;
+}
+
+/* buttom view of text-content-box */
+
+.barraMostrar {
+  /* show bar */
+  position: absolute;
+  bottom: 0;
+  right: 37%;
+  width: 25%;
+  height: 8px;
+  border-bottom: 8px solid rgba(71, 236, 30, 0.829);
+  box-shadow: 0 0 5px rgba(0, 241, 0, 0.5);
+  transition: transform 0.1s ease-in-out; /* effect of slide */
+  border-radius: 2px 2px 0 0;
+}
+
+.botonShow {
+  /* show button */
+  font-family: "Roboto Mono", cursive;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 37%;
+  width: 25%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out; /* effect of appearance */
+  border: none;
+  border-radius: 2px;
+  background: rgb(82, 223, 17);
+}
+
+.container:hover .barraMostrar {
+  /* efect of slide */
+  transform: translateY(-150%); /* slide to up */
+}
+
+.container:hover .botonShow {
+  /* efecto of appearance */
+  opacity: 1; /* show show button */
+  cursor: pointer;
+}
+
+/* buttom delete of text-content-box */
+
+.barraDelete {
+  /* delete bar */
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+  width: 25%;
+  height: 8px;
+  border-bottom: 8px solid rgba(236, 30, 30, 0.692);
+  box-shadow: 0 0 5px rgba(241, 0, 0, 0.5);
+  transition: transform 0.1s ease-in-out; /* effect of slide */
+  border-radius: 2px 2px 0 0;
+}
+
+.botonDelete {
+  /* delete button */
+  font-family: "Roboto Mono", cursive;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+  width: 25%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out; /* effect of appearance */
+  border: none;
+  border-radius: 2px;
+  background: rgb(236, 30, 30);
+}
+
+.container:hover .barraDelete {
+  /* efect of slide */
+  transform: translateY(-100%); /* slide to up */
+}
+
+.container:hover .botonDelete {
+  /* effect of appearance */
+  opacity: 1; /* show delete button */
+  cursor: pointer;
+}
+
+/* Bottom show the content of the form in the text-content-box */
+
+.boxShow {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  width: 500px;
+  height: 770px;
+  background: linear-gradient(320deg, #5d89ca8f 50%, #18e0d6b9 100%);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+}
+
+.boxShow-content {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.boxShow-content-title {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  width: 87%;
+  margin: auto;
+  height: 52px;
+  font-size: 12px;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  bottom: 15px;
+}
+
+.boxShow-date {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  margin: auto;
+  top: 10px;
+  left: 78px;
+  width: 70%;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.boxShow-content-text {
+  position: relative;
+  margin: auto;
+  width: 98%;
+}
+
+.boxShow-text-paragraph {
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  padding: 10px;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  height: 698px;
 }
