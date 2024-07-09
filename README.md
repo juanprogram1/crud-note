@@ -28,7 +28,7 @@ git clone https://github.com/juanprogram1/crud-note.git
 2. Go to the project directory
 
 ```
-cd crud-notess
+cd crud-note-kappa
 ```
 
 3. Install the dependencies
