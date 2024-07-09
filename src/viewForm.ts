@@ -1,6 +1,6 @@
 import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
-import { initializeButtonEvents } from "./bottomsDelete";
+import { initializeButtonEvents } from "./initializeButtonEvents";
 function viewForm() {
   // get all keys from localStorage
   const allKeys: string[] = Object.keys(localStorage);

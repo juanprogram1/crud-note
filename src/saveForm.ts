@@ -1,7 +1,7 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
 import { viewForm } from "./viewForm";
-import { initializeButtonEvents } from "./bottomsDelete";
+import { initializeButtonEvents } from "./initializeButtonEvents";
 
 // viewForm function
 viewForm();

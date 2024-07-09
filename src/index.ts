@@ -28,14 +28,14 @@ document.getElementById("bottomShow")?.addEventListener("click", function () {
   if (bottomShow && bottomHeader && bottomFooter && hiddenContent) {
     // header source specifications
     bottomHeader.style.textTransform = "uppercase";
-    bottomHeader.style.fontFamily = "Roboto";
+    bottomHeader.style.fontFamily = "Roboto Mono";
     bottomHeader.style.fontSize = "52px";
     bottomHeader.style.paddingTop = "0rem";
     bottomHeader.style.fontWeight = "bold";
     bottomHeader.style.letterSpacing = "2px";
 
     // footer source specifications
-    bottomFooter.style.fontFamily = "Roboto";
+    bottomFooter.style.fontFamily = "Roboto Mono";
     bottomFooter.style.fontSize = "20px";
     bottomFooter.style.fontWeight = "bold";
     bottomFooter.style.letterSpacing = "1px";

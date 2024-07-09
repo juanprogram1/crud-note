@@ -237,7 +237,7 @@ input[type="text"]::placeholder {
 .text-content::-webkit-scrollbar-track {
   border: 5px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .text-content::-webkit-scrollbar {
@@ -247,7 +247,7 @@ input[type="text"]::placeholder {
 
 .text-content::-webkit-scrollbar-thumb {
   background-color: rgb(217, 213, 213, 0.5);
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .text-content-box {
@@ -471,45 +471,62 @@ input[type="text"]::placeholder {
 .boxShow-content-title {
   font-family: "Roboto Mono", cursive;
   position: relative;
-  width: 87%;
+  width: 90%;
   margin: auto;
-  height: 52px;
-  font-size: 12px;
   text-align: center;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 10px;
-  bottom: 15px;
+  top: 20px;
+  border-bottom: 2px solid #ffffffc8;
+  box-shadow: 0px 0px 15px #09e7f7;
+  border-radius: 25px;
 }
 
 .boxShow-date {
   font-family: "Roboto Mono", cursive;
   position: relative;
-  margin: auto;
-  top: 10px;
-  left: 78px;
-  width: 70%;
+  text-overflow: ellipsis;
+  top: 2px;
+  left: 228px;
+  width: 54%;
   font-size: 14px;
   font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  text-transforms: capitalize;
 }
 
 .boxShow-content-text {
   position: relative;
   margin: auto;
-  width: 98%;
+  width: 100%;
 }
 
 .boxShow-text-paragraph {
   font-family: "Roboto Mono", cursive;
   position: relative;
-  padding: 10px;
+  padding: 8px;
   font-size: 13px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-y: auto;
   word-break: break-all;
-  height: 698px;
+  height: 664px;
+  top: 27px;
+}
+
+.boxShow-text-paragraph::-webkit-scrollbar-track {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.boxShow-text-paragraph::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.102);
+}
+
+.boxShow-text-paragraph::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 213, 213, 0.5);
+  border-radius: 4px;
 }
