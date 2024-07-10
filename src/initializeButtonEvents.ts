@@ -1,5 +1,3 @@
-import { getNowDate } from "./showDate_showContent";
-
 function initializeButtonEvents(): void {
   const editButtons = document.querySelectorAll(".botonEdit");
   const showButtons = document.querySelectorAll(".botonShow");
@@ -7,7 +5,7 @@ function initializeButtonEvents(): void {
 
   editButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log("Editar");
+      `Editar`;
     });
   });
 
@@ -51,5 +49,4 @@ function initializeButtonEvents(): void {
   });
 }
 
-console.log(getNowDate());
 export { initializeButtonEvents };

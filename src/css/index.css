@@ -283,6 +283,7 @@ input[type="text"]::placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -295,6 +296,7 @@ input[type="text"]::placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-all;
@@ -308,6 +310,7 @@ input[type="text"]::placeholder {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
   .date-text {
@@ -477,6 +480,7 @@ input[type="text"]::placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   top: 20px;
@@ -489,12 +493,12 @@ input[type="text"]::placeholder {
   font-family: "Roboto Mono", cursive;
   position: relative;
   text-overflow: ellipsis;
-  top: 2px;
-  left: 228px;
-  width: 54%;
+  top: 0;
+  left: 207px;
+  width: 59%;
   font-size: 14px;
   font-weight: bold;
-  text-transforms: capitalize;
+  text-transform: capitalize;
 }
 
 .boxShow-content-text {
