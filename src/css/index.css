@@ -283,6 +283,7 @@ input[type="text"]::placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -295,6 +296,7 @@ input[type="text"]::placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-all;
@@ -308,6 +310,7 @@ input[type="text"]::placeholder {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
   .date-text {
@@ -479,6 +482,7 @@ input[type="text"]::placeholder {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 10px;
