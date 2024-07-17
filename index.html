@@ -1,139 +1,92 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <title>Task</title>
-  </head>
-  <body>
-    <header id="bottomHeader">Notas🗒️</header>
 
-    <!-- Main -->
-    <main id="principal">
-      <button id="bottomShow" class="glowing-btn">
-        <span class="glowing-txt"
-          >CRE<span class="faulty-letter">ATE </span
-          ><span class="faulty-letter">NOT</span>E</span
-        >
-      </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <title>Task</title>
+</head>
 
-      <div id="hiddenContent" class="hidden">
-        <section class="sectionDad">
-          <!--  box1 -->
-          <div class="box1">
-            <!-- form -->
-            <form id="form">
-              <!-- form title -->
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="Titulo..."
-              />
-              <!-- form date -->
-              <div id="date" class="nowDate"></div>
-              <!-- form text -->
-              <textarea
-                name="textarea"
-                id="writenote"
-                placeholder="Escribe tu nota..."
-              ></textarea>
-              <!-- form submit -->
-              <button
-                aria-label="Form save"
-                id="btnSave"
-                type="button"
-                class="btnSave"
-              >
-                <!-- form save icon -->
-                <img src="./public/plus-svgrepo-com.svg" alt="savePlus" />
-              </button>
-            </form>
+<body>
+  <header id="bottomHeader">Notas🗒️</header>
+
+  <!-- Main -->
+  <main id="principal">
+    <button id="bottomShow" class="glowing-btn">
+      <span class="glowing-txt">CRE<span class="faulty-letter">ATE </span><span class="faulty-letter">NOT</span>E</span>
+    </button>
+
+    <div id="hiddenContent" class="hidden">
+      <section class="sectionDad">
+        <!--  box1 -->
+        <div class="box1">
+          <!-- form -->
+          <form id="form">
+            <!-- form title -->
+            <input type="text" name="title" id="title" placeholder="Titulo..." />
+            <!-- form date -->
+            <div id="date" class="nowDate"></div>
+            <!-- form text -->
+            <textarea name="textarea" id="writenote" placeholder="Escribe tu nota..."></textarea>
+            <!-- form submit -->
+            <button aria-label="Form save" id="btnSave" type="button" class="btnSave">
+              <!-- form save icon -->
+              <img src="./public/plus-svgrepo-com.svg" alt="savePlus" />
+            </button>
+          </form>
+        </div>
+        <!-- form > box2 show the content of the form in the text-content-box -->
+        <div class="boxShow boxShow-content-text hidden">
+          <h1 class="boxShow-title">Est
+
+          </h1>
+          <p class="boxShow-text-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non hic, dolores
+            iure minima id veritatis odio eum doloremque. Exercitationem nobis sint beatae eaque non distinctio! A
+            ullam atque recu
+            maxime maiores!
+            Tenetur nostrum nihil et rerum accusamus soluta tempore, aliquam quis, harum similique voluptatibus unde,
+            obcaecati enim. Iure, ullam voluptatem vero ab quidem corporis ipsa hic provident reprehenderit, impedit,
+            maxime maiores!Tenetur nostrum nihil et rerum accusamus soluta tempore, aliquam quis, harum similique
+            voluptatibus unde,
+            obcaecati enim. Iure, ullam voluptatem vero ab quidem corporis ipsa hic provident reprehenderit, impedit,
+            maxime maiores! ullam atque recu
+            maxime maiores!
+            Tenetur nostrum nihil et rerum accusamus soluta tempore, aliquam quis, harum similique voluptatibus unde,
+            obcaecati enim. Iure, ullam voluptatem vero ab quidem corporis ipsa hic provident reprehenderit, impedit,
+            maxime maiores!Tenetur nostrum nihil et rerum accusamus soluta tempore, aliquam quis, harum similique
+            vo
+            obcaecati enim. Iure, ullam voluptatem vero ab quidem corporis ipsa hic provident reprehenderit, impedit,
+            maxime maiores! ullam atque recu
+            maxime maiores!
+            Tenetur nostrum nihil et rerum accusamus soluta tempore, aliquam quis, harum similique voluptatibus unde,
+            obcaecati enim. Iure, ullam voluptatem vero ab quidem corporis ipsa hic provident reprehenderit, impedit,
+            maxime maiores!Tenetur nostrum nihil et rerum accusamus soluta tempore, aliquam quis, haru
+          </p>
+          <div class="boxShow-date">miércoles, 17/07/2024, 10:08 a. m.</div>
+
+        </div>
+
+        <!-- here is the form > box2 -->
+        <!-- form > box2 -->
+        <div class="box2" id="box2">
+          <!-- title-content -->
+          <div class="title-content">
+            <h1 class="title">Notas</h1>
           </div>
-          <!-- form > box2 show the content of the form in the text-content-box -->
-          <div class="boxShow hidden">
-            <div class="boxShow-content">
-              <div class="boxShow-content-title">
-                <h1 class="boxShow-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officia, neque dolorem itaque corporis dolorum perferendis
-                  ipsum fuga culpa, quidem distinctio quam repellat iusto
-                  officiis voluptatibus sed vel qui deleniti vitae.
-                </h1>
-              </div>
-              <div class="boxShow-date">22/02/2022 jsdkajskldjakdjakd as</div>
-              <div class="boxShow-content-text">
-                <p class="boxShow-text-paragraph">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-                  a eius asperiores maiores ipsum ad ratione et dolore! Natus
-                  architecto aspernatur molestiae fugit, ad voluptates hic
-                  dolore sint suscipit eligendi? Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Provident sequi iste alias
-                  veniam unde illum voluptatem harum at, iure, excepturi beatae
-                  dicta vero eum reprehenderit deleniti eius. Minima, aut
-                  accusamus. Lorem ipsum dolor, sit amet consectetur adipisicing
-                  elit. Doloribus voluptatem molestias, rem vitae voluptas
-                  pariatur soluta, ex aperiam recusandae quos neque maiores
-                  dolor iure consequuntur! Sed itaque perferendis voluptatum
-                  ducimus!Lorem ipsum, dolor sit amet consectetur adipisicing
-                  elit. Nisi a eius asperiores maiores ipsum ad ratione et
-                  dolore! Natus architecto aspernatur molestiae fugit, ad
-                  voluptates hic dolore sint suscipit eligendi? Lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Provident sequi
-                  iste alias veniam unde illum voluptatem harum at, iure,
-                  excepturi beatae dicta vero eum reprehenderit deleniti eius.
-                  Minima, aut accusamus. Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Doloribus voluptatem molestias, rem vitae
-                  voluptas pariatur soluta, ex aperiam recusandae quos neque
-                  maiores dolor iure consequuntur! Sed itaque perferendis
-                  voluptatum ducimus!Doloribus voluptatem molestias, rem vitae
-                  voluptas pariatur soluta, ex aperiam recusandae quos neque
-                  maiores dolor iure consequuntur! Sed itaque perferendis
-                  voluptatum ducimus!ex aperiam recusandae quos neque maiores
-                  dolor iure consequuntur! Sed itaque perferendis voluptatum
-                  ducimus! ex aperiam recusandae quos neque maiores dolor iure
-                  consequuntur! Sed itaque perferendis voluptatum ducimus!ex
-                  aperiam recusandae quos neque maiores doloriure consequuntur!
-                  Sed itaque perferendis voluptatum ducimus! aperiam recusandae
-                  quos neque maiores dolor iure consequuntur! Sed itaque
-                  perferendis voluptatum ducimus! neque maiores doloriure
-                  consequuntur! Sed itaque perferendis voluptatum ducimus!
-                  aperiam recusandae quos neque maiores dolor iure consequuntur!
-                  Sed itaque perferendis voluptatum ducimus! ducimus! neque
-                  maiores doloriure consequuntur! Sed itaque perferendis
-                  voluptatum ducimus! aperiam recusandae quos neque maiores
-                  dolor iure consequuntur! Sed itaque perferendis voluptatum
-                  ducimus! ducimus! neque maiores doloriure consequuntur! Sed
-                  itaque perferendis voluptatum ducimus! aperiam recusandae quos
-                  neque maiores dolor iure consequuntur! Sed itaque perferendis
-                  voluptatum ducimus!
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- here is the form > box2 -->
-          <!-- form > box2 -->
-          <div class="box2" id="box2">
-            <!-- title-content -->
-            <div class="title-content">
-              <h1 class="title">Notas</h1>
-            </div>
-            <!-- text-content -->
-            <article id="text-content" class="text-content"></article>
-          </div>
-        </section>
-      </div>
-    </main>
-    <!-- Main -->
-    <!-- footer -->
-    <footer id="bottomFooter">
-      Copyright © 2024 | Web Developer: Juan David Carrillo
-    </footer>
-    <!-- script -->
-    <script type="module" src="./src/index.ts"></script>
-  </body>
+          <!-- text-content -->
+          <article id="text-content" class="text-content"></article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- Main -->
+  <!-- footer -->
+  <footer id="bottomFooter">
+    Copyright © 2024 | Web Developer: Juan David Carrillo
+  </footer>
+  <!-- script -->
+  <script type="module" src="./src/index.ts"></script>
+</body>
+
 </html>

@@ -17,8 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(130deg, #18f7ffc2, #af002d 41.07%, #319197 76.05%)
-    center / cover no-repeat fixed;
+  background: linear-gradient(130deg, #18f7ffc2, #af002d 41.07%, #319197 76.05%) center / cover no-repeat fixed;
 }
 
 header {
@@ -129,6 +128,7 @@ input[type="text"]::placeholder {
   color: rgb(240, 255, 255);
   text-indent: 5px;
 }
+
 .nowDate:hover {
   cursor: default;
 }
@@ -337,7 +337,8 @@ input[type="text"]::placeholder {
   height: 8px;
   border-bottom: 8px solid rgba(0, 205, 255, 0.702);
   box-shadow: 0 0 5px #00aeffb3;
-  transition: transform 0.1s ease-in-out; /* effect of slide */
+  transition: transform 0.1s ease-in-out;
+  /* effect of slide */
   border-radius: 2px 2px 0 0;
 }
 
@@ -351,7 +352,8 @@ input[type="text"]::placeholder {
   bottom: 0;
   right: 68%;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out; /* effect of appearance */
+  transition: opacity 0.1s ease-in-out;
+  /* effect of appearance */
   border: none;
   border-radius: 2px;
   background: rgb(0, 174, 255);
@@ -359,12 +361,14 @@ input[type="text"]::placeholder {
 
 .container:hover .barra {
   /* effect of slide */
-  transform: translateY(-120%); /* slide to up */
+  transform: translateY(-120%);
+  /* slide to up */
 }
 
 .container:hover .botonEdit {
   /* effect of appearance */
-  opacity: 1; /* button in displayed */
+  opacity: 1;
+  /* button in displayed */
   cursor: pointer;
 }
 
@@ -379,7 +383,8 @@ input[type="text"]::placeholder {
   height: 8px;
   border-bottom: 8px solid rgba(71, 236, 30, 0.829);
   box-shadow: 0 0 5px rgba(0, 241, 0, 0.5);
-  transition: transform 0.1s ease-in-out; /* effect of slide */
+  transition: transform 0.1s ease-in-out;
+  /* effect of slide */
   border-radius: 2px 2px 0 0;
 }
 
@@ -393,7 +398,8 @@ input[type="text"]::placeholder {
   right: 37%;
   width: 25%;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out; /* effect of appearance */
+  transition: opacity 0.1s ease-in-out;
+  /* effect of appearance */
   border: none;
   border-radius: 2px;
   background: rgb(82, 223, 17);
@@ -401,12 +407,14 @@ input[type="text"]::placeholder {
 
 .container:hover .barraMostrar {
   /* efect of slide */
-  transform: translateY(-150%); /* slide to up */
+  transform: translateY(-150%);
+  /* slide to up */
 }
 
 .container:hover .botonShow {
   /* efecto of appearance */
-  opacity: 1; /* show show button */
+  opacity: 1;
+  /* show show button */
   cursor: pointer;
 }
 
@@ -421,7 +429,8 @@ input[type="text"]::placeholder {
   height: 8px;
   border-bottom: 8px solid rgba(236, 30, 30, 0.692);
   box-shadow: 0 0 5px rgba(241, 0, 0, 0.5);
-  transition: transform 0.1s ease-in-out; /* effect of slide */
+  transition: transform 0.1s ease-in-out;
+  /* effect of slide */
   border-radius: 2px 2px 0 0;
 }
 
@@ -435,7 +444,8 @@ input[type="text"]::placeholder {
   right: 6%;
   width: 25%;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out; /* effect of appearance */
+  transition: opacity 0.1s ease-in-out;
+  /* effect of appearance */
   border: none;
   border-radius: 2px;
   background: rgb(236, 30, 30);
@@ -443,26 +453,18 @@ input[type="text"]::placeholder {
 
 .container:hover .barraDelete {
   /* efect of slide */
-  transform: translateY(-100%); /* slide to up */
+  transform: translateY(-100%);
+  /* slide to up */
 }
 
 .container:hover .botonDelete {
   /* effect of appearance */
-  opacity: 1; /* show delete button */
+  opacity: 1;
+  /* show delete button */
   cursor: pointer;
 }
 
 /* Bottom show the content of the form in the text-content-box */
-
-.boxShow {
-  font-family: "Roboto Mono", cursive;
-  position: relative;
-  width: 500px;
-  height: 770px;
-  background: linear-gradient(320deg, #5d89ca8f 50%, #18e0d6b9 100%);
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  border-radius: 4px;
-}
 
 .boxShow-content {
   border: 2px solid rgba(255, 255, 255, 0.6);
@@ -471,48 +473,72 @@ input[type="text"]::placeholder {
   border-radius: 2px;
 }
 
-.boxShow-content-title {
+.boxShow-title {
   font-family: "Roboto Mono", cursive;
+  top: 10px;
   position: relative;
-  width: 87%;
-  margin: auto;
-  height: 52px;
-  font-size: 12px;
+  font-size: 17px;
   text-align: center;
+  width: 90%;
+  margin: auto;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
+  word-wrap: break-word;
   text-overflow: ellipsis;
-  padding: 10px;
-  bottom: 15px;
 }
 
 .boxShow-date {
   font-family: "Roboto Mono", cursive;
-  position: relative;
-  margin: auto;
-  top: 10px;
-  left: 78px;
-  width: 70%;
-  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  font-size: 12px;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .boxShow-content-text {
-  position: relative;
   margin: auto;
-  width: 98%;
+  width: 530px;
+  font-family: "Roboto Mono", cursive;
+  position: relative;
+  font-size: 13px;
+  height: 770px;
+  background-color: rgba(52, 152, 219, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* scrollbar of text-content */
+.boxShow-text-paragraph::-webkit-scrollbar-track {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.boxShow-text-paragraph::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ffffff1a;
+}
+
+.boxShow-text-paragraph::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 213, 213, 0.5);
+  border-radius: 1px;
 }
 
 .boxShow-text-paragraph {
-  font-family: "Roboto Mono", cursive;
   position: relative;
-  padding: 10px;
   font-size: 13px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  height: 698px;
+  width: 92%;
+  max-height: 69dvh;
+  margin: auto;
+  padding-left: 10px;
+  overflow-y: auto;
+  top: 30px;
+  word-wrap: break-word;
 }
