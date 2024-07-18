@@ -22,8 +22,16 @@ function showBox2form(contentForm: string) {
   const textContent = document.getElementById("text-content");
   if (textContent) {
     textContent.insertAdjacentHTML("afterbegin", contentForm);
-    // insert the content HTML into the div
+    // insert the content HTML into the div textContent
+  }
+}
+function sectionDad(contentForm: string) {
+  // add div show-content-box to the sectionDad
+  const textContent = document.querySelector(".sectionDad") as HTMLElement;
+  if (textContent) {
+    textContent.insertAdjacentHTML("afterbegin", contentForm);
+    // insert the content HTML into the div textContent
   }
 }
 
-export { getNowDate, showBox2form };
+export { getNowDate, showBox2form, sectionDad };

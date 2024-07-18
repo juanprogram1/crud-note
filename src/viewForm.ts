@@ -1,6 +1,8 @@
 import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
 import { initializeButtonEvents } from "./bottomsDelete";
+import { sectionDad } from "./showDate_showContent";
+
 function viewForm() {
   // get all keys from localStorage
   const allKeys: string[] = Object.keys(localStorage);
@@ -36,8 +38,11 @@ function viewForm() {
         </div>
       `;
 
+    const hiddenContent = `<div id="boxShow" class="boxShow boxShow-content-text hidden" data-key="${task.id}"></div>`;
+
     // show the content of the form in the text-content-box
     showBox2form(contexform);
+    sectionDad(hiddenContent);
   });
   initializeButtonEvents();
 }
