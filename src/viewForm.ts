@@ -20,9 +20,9 @@ function viewForm() {
   allTasks.map((task: Tasks) => {
     const contexform = `
         <div class="text-content-box" data-key="${task.id}">
-          <h3 class="titleh3">${task.title}</h3>
-          <p class="date-text">${task.date}</p>
-          <p class="text-paragraph">${task.textarea}</p>
+          <h3 class="titleh3" data-key="${task.id}">${task.title}</h3>
+          <p class="date-text" data-key="${task.id}">${task.date}</p>
+          <p class="text-paragraph" data-key="${task.id}">${task.textarea}</p>
                 <div class="container">
                   <div class="barraMostrar"></div>
                   <button data-key="${task.id}" class="botonShow">Mostrar</button>
@@ -38,7 +38,7 @@ function viewForm() {
         </div>
       `;
 
-    const hiddenContent = `<div id="boxShow" class="boxShow boxShow-content-text hidden" data-key="${task.id}"></div>`;
+    const hiddenContent = `<div class="boxShow boxShow-content-text hidden" data-key="${task.id}"></div>`;
 
     // show the content of the form in the text-content-box
     showBox2form(contexform);

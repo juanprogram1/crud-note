@@ -48,9 +48,11 @@ function saveForm() {
 
     const contexform = `
       <div class="text-content-box" data-key="${idUser}">
-        <h3 class="titleh3">${titleValue}</h3>
-        <p class="date-text">${dateDMY}</p>
-        <p class="text-paragraph">${textareaValue}</p>
+        <div data-key="${idUser}">
+          <h3 class="titleh3" data-key="${idUser}">${titleValue}</h3>
+          <p class="date-text" data-key="${idUser}">${dateDMY}</p>
+          <p class="text-paragraph" data-key="${idUser}">${textareaValue}</p>
+        </div>
                 <div class="container">
                   <div class="barraMostrar"></div>
                   <button data-key="${idUser}" class="botonShow">Mostrar</button>
@@ -66,7 +68,7 @@ function saveForm() {
       </div>
     `;
 
-    const hiddenContent = `<div id="boxShow" class="boxShow boxShow-content-text hidden" data-key="${idUser}"></div>`;
+    const hiddenContent = `<div class="boxShow boxShow-content-text hidden" data-key="${idUser}"></div>`;
 
     // show the content of the form in the text-content-box
     showBox2form(contexform);

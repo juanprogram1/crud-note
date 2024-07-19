@@ -8,7 +8,7 @@ function initializeButtonEvents(): void {
   // editButtons
   editButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log("Editar");
+      "Editar";
     });
   });
 
@@ -30,6 +30,7 @@ function initializeButtonEvents(): void {
       // parse all values to FormRegister
       const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
       allTasks.sort((a, b) => a.id - b.id);
+      console.log(allTasks);
 
       if (box1 && boxShow) {
         //  hidden the box1 and show the hidden content
@@ -40,29 +41,20 @@ function initializeButtonEvents(): void {
           duration: 400,
           easing: "ease-in-out",
         });
+
+        boxShow.innerHTML = "";
       }
       //showBoton information
-      allTasks.map((task: Tasks) => {
+      allTasks.forEach((task: Tasks) => {
+        console.log(task);
         // Information of contentBoxShow
         const contentBoxShow = `
         <h1 class="boxShow-title" data-key="${task.id}">${task.title}</h1>
         <p class="boxShow-text-paragraph" data-key="${task.id}">${task.textarea}</p>
         <div class="boxShow-date" data-key="${task.id}">${task.date}</div>
       `;
-        fnboxShow(contentBoxShow);
-        // function to show the content of the form in the targetElement
-        function fnboxShow(contentForm: string) {
-          // add text-content-box to the text-content article
-          const targetElement = document.querySelector(
-            `.boxShow[data-key="${task.id}"]`,
-          );
-          if (targetElement) {
-            targetElement.insertAdjacentHTML("afterbegin", contentForm);
-            // insert the content HTML into the div textContent
-          } else {
-            console.warn("la clase boxShow no existe");
-          }
-        }
+
+        boxShow.innerHTML = contentBoxShow;
       });
     });
   });
@@ -76,11 +68,11 @@ function initializeButtonEvents(): void {
         `[data-key="${keysDelete}"]`,
       ) as HTMLDivElement;
 
-      if (localStorage.getItem(keysDelete)) {
+      if (localStorage.getItem(keysDelete) && parentDiv) {
         // delete the item from localStorage
+
         localStorage.removeItem(keysDelete);
       }
-
       if (parentDiv) {
         // delete the div parent Html
         parentDiv.remove();
