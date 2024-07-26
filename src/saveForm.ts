@@ -1,7 +1,6 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
 import { viewForm } from "./viewForm";
-import { initializeButtonEvents } from "./bottomsDelete";
 import { sectionDad } from "./showDate_showContent";
 
 // viewForm function
@@ -49,9 +48,9 @@ function saveForm() {
     const contexform = `
       <div class="text-content-box" data-key="${idUser}">
         <div data-key="${idUser}">
-          <h3 class="titleh3" data-key="${idUser}">${titleValue}</h3>
-          <p class="date-text" data-key="${idUser}">${dateDMY}</p>
-          <p class="text-paragraph" data-key="${idUser}">${textareaValue}</p>
+          <h3 class="titleh3">${titleValue}</h3>
+          <p class="date-text">${dateDMY}</p>
+          <p class="text-paragraph">${textareaValue}</p>
         </div>
                 <div class="container">
                   <div class="barraMostrar"></div>
@@ -80,7 +79,6 @@ function saveForm() {
   } else {
     alert("ingresa tu información");
   }
-  initializeButtonEvents();
 }
 
 export { saveForm };

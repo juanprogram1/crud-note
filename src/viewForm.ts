@@ -1,6 +1,5 @@
 import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
-import { initializeButtonEvents } from "./bottomsDelete";
 import { sectionDad } from "./showDate_showContent";
 
 function viewForm() {
@@ -15,7 +14,6 @@ function viewForm() {
   // parse all values to FormRegister
   const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
   allTasks.sort((a, b) => a.id - b.id);
-
   // map the register to the form for display
   allTasks.map((task: Tasks) => {
     const contexform = `
@@ -44,7 +42,6 @@ function viewForm() {
     showBox2form(contexform);
     sectionDad(hiddenContent);
   });
-  initializeButtonEvents();
 }
 
 export { viewForm };
