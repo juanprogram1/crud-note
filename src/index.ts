@@ -49,5 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getNowDate(); // Get the current date and time
 });
 
+// bottomDelete function
+
 // saveForm function
 document.getElementById("btnSave")?.addEventListener("click", saveForm);

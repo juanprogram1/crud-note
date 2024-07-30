@@ -1,7 +1,7 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
 import { viewForm } from "./viewForm";
-import { sectionDad } from "./showDate_showContent";
+import { bottomDelete } from "./bottomDelete";
 
 // viewForm function
 viewForm();
@@ -67,11 +67,8 @@ function saveForm() {
       </div>
     `;
 
-    const hiddenContent = `<div class="boxShow boxShow-content-text hidden" data-key="${idUser}"></div>`;
-
     // show the content of the form in the text-content-box
     showBox2form(contexform);
-    sectionDad(hiddenContent);
 
     // clean the form
     title.value = ""; // clean the title input
@@ -79,6 +76,8 @@ function saveForm() {
   } else {
     alert("ingresa tu información");
   }
+  bottomDelete();
 }
+bottomDelete();
 
 export { saveForm };
