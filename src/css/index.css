@@ -17,7 +17,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(130deg, #18f7ffc2, #af002d 41.07%, #319197 76.05%) center / cover no-repeat fixed;
+  background: linear-gradient(130deg, #18f7ffc2, #af002d 41.07%, #319197 76.05%)
+    center / cover no-repeat fixed;
 }
 
 header {
@@ -464,81 +465,13 @@ input[type="text"]::placeholder {
   cursor: pointer;
 }
 
-/* Bottom show the content of the form in the text-content-box */
-
-.boxShow-content {
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-}
-
-.boxShow-title {
-  font-family: "Roboto Mono", cursive;
-  top: 10px;
-  position: relative;
-  font-size: 17px;
-  text-align: center;
-  width: 90%;
-  margin: auto;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
-}
-
-.boxShow-date {
-  font-family: "Roboto Mono", cursive;
+/* Modal */
+.container-modal {
   position: absolute;
-  bottom: 0;
-  left: 2px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.boxShow-content-text {
-  margin: auto;
-  width: 530px;
-  font-family: "Roboto Mono", cursive;
-  position: relative;
-  font-size: 13px;
-  height: 770px;
-  background-color: rgba(52, 152, 219, 0.7);
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* scrollbar of text-content */
-.boxShow-text-paragraph::-webkit-scrollbar-track {
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-.boxShow-text-paragraph::-webkit-scrollbar {
-  width: 8px;
-  background-color: #ffffff1a;
-}
-
-.boxShow-text-paragraph::-webkit-scrollbar-thumb {
-  background-color: rgb(217, 213, 213, 0.5);
-  border-radius: 1px;
-}
-
-.boxShow-text-paragraph {
-  position: relative;
-  font-size: 13px;
-  width: 92%;
-  max-height: 69dvh;
-  margin: auto;
-  padding-left: 10px;
-  overflow-y: auto;
-  top: 30px;
-  word-wrap: break-word;
+  width: 850px;
+  height: 650px;
+  top: 150px;
+  left: calc(50% - 425px);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
 }

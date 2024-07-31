@@ -1,5 +1,7 @@
 import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
+import { bottomDelete } from "./bottomDelete";
+import { bottomShow } from "./bottomShow";
 
 function viewForm() {
   // get all keys from localStorage
@@ -40,6 +42,8 @@ function viewForm() {
     // show the content of the form in the text-content-box
     showBox2form(contexform);
   });
+  bottomDelete();
+  bottomShow();
 }
 
 export { viewForm };

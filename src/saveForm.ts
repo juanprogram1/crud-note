@@ -2,6 +2,7 @@ import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
 import { viewForm } from "./viewForm";
 import { bottomDelete } from "./bottomDelete";
+import { bottomShow } from "./bottomShow";
 
 // viewForm function
 viewForm();
@@ -77,7 +78,7 @@ function saveForm() {
     alert("ingresa tu información");
   }
   bottomDelete();
+  bottomShow();
 }
-bottomDelete();
 
 export { saveForm };
