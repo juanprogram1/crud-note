@@ -1,6 +1,7 @@
 import "./css/index.css";
 import { getNowDate } from "./showDate_showContent";
 import { saveForm } from "./saveForm";
+import { viewForm } from "./viewForm";
 
 // bottomShow Form
 document.getElementById("bottomShow")?.addEventListener("click", function () {
@@ -49,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
   getNowDate(); // Get the current date and time
 });
 
-// bottomDelete function
-
 // saveForm function
 document.getElementById("btnSave")?.addEventListener("click", saveForm);
+
+document.addEventListener("DOMContentLoaded", () => {
+  viewForm();
+});

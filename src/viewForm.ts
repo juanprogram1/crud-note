@@ -2,6 +2,7 @@ import { Tasks } from "./designate";
 import { showBox2form } from "./showDate_showContent";
 import { bottomDelete } from "./bottomDelete";
 import { bottomShow } from "./bottomShow";
+import { bottomClose } from "./bottomShow";
 
 function viewForm() {
   // get all keys from localStorage
@@ -44,6 +45,7 @@ function viewForm() {
   });
   bottomDelete();
   bottomShow();
+  bottomClose();
 }
 
 export { viewForm };

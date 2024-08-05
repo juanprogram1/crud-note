@@ -66,11 +66,9 @@ section {
 }
 
 .box2 {
-  display: flex;
-  justify-content: center;
   font-family: "Roboto Mono", cursive;
   width: 420px;
-  height: 770px;
+  height: 790px;
   background: linear-gradient(320deg, #699ff052 50%, #18e0d6c7 100%);
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 10px;
@@ -474,4 +472,68 @@ input[type="text"]::placeholder {
   left: calc(50% - 425px);
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 6px;
+}
+
+/*  bottom close to box1 and box2  */
+
+.bottom-close {
+  font-family: "Roboto Mono", cursive;
+  position: absolute;
+  right: 0;
+  background-color: #ff3f34;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Modal info */
+.modal-info {
+  border: 2px solid #ffffff66;
+  width: 100%;
+  max-height: 650px;
+  height: 650px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* Scrool of writenote */
+.modal-info::-webkit-scrollbar-track {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-info::-webkit-scrollbar {
+  width: 10px;
+  background-color: #ffffff1a;
+}
+
+.modal-info::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 213, 213, 0.6);
+  border-radius: 2px;
+}
+
+/* Title of modal */
+.title-modal {
+  font-family: "Roboto Mono", cursive;
+  border: 2px solid #ffffff66;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Date of modal */
+.date-modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Textarea of modal */
+.textarea-modal {
+  font-family: "Roboto Mono", cursive;
+  font-size: 14px;
+  padding: 10px;
 }
