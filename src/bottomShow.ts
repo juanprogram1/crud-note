@@ -18,9 +18,9 @@ function bottomShow() {
       const JSONInfoLocalStorageKey = JSON.parse(infoLocalStorageKey!);
 
       const allModalInfo = `
+        <div class="date-modal">${JSONInfoLocalStorageKey.date}</div>
         <h3 class="title-modal">${JSONInfoLocalStorageKey.title}</h3>
         <p class="textarea-modal">${JSONInfoLocalStorageKey.textarea}</p>
-        <div class="date-modal">${JSONInfoLocalStorageKey.date}</div>
       `;
 
       modalInfo.innerHTML = allModalInfo;

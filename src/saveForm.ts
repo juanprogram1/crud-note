@@ -37,7 +37,7 @@ function saveForm() {
       id: idUser,
       title: titleValue,
       textarea: textareaValue,
-      date: dateDMY,
+      date: dateValue,
     };
 
     // save the form register in localStorage
