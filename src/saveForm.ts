@@ -1,8 +1,9 @@
 import { getNowDate, showBox2form } from "./showDate_showContent";
 import { Tasks2 } from "./designate";
-import { bottomDelete } from "./bottomDelete";
-import { bottomShow } from "./bottomShow";
-import { bottomClose } from "./bottomShow";
+import { bottomDelete } from "./bottoms/bottomDelete";
+import { bottomShow } from "./bottoms/bottomShow";
+import { bottomClose } from "./bottoms/bottomShow";
+import { bottomEdit } from "./bottoms/bottomEdit";
 
 // fuction to generate a unique id
 function generateIdUnique(): string {
@@ -76,6 +77,7 @@ function saveForm() {
   }
   bottomDelete();
   bottomShow();
+  bottomEdit();
   bottomClose();
 }
 
