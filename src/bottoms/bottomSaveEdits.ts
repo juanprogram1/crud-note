@@ -1,9 +1,9 @@
 function btnSaveEdits() {
-  const saveChanges = document.getElementById(
+  const _saveChanges = document.getElementById(
     "saveChanges",
   ) as HTMLButtonElement;
 
-  saveChanges.addEventListener("click", () => {});
+  /* saveChanges.addEventListener("click", () => {}); */
 }
 
 export { btnSaveEdits };
