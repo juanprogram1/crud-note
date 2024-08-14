@@ -23,9 +23,9 @@ function bottomEdit() {
       const dateValue: string = JSONInfoLocalStorageKey.date;
 
       const allModalInfo = `
-          <div class="date-modal">${dateValue}</div>
-        <h3 class="title-modal">${titleValue}</h3>
-        <p class="textarea-modal">${textareaValue}</p>
+        <div class="date-modal">${dateValue}</div>
+        <h3 id="title" class="title-modal" contenteditable="true">${titleValue}</h3>
+        <p id="textarea" class="textarea-modal" contenteditable="true">${textareaValue}</p>
       `;
 
       modalInfo.innerHTML = allModalInfo;
