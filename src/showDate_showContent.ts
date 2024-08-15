@@ -25,6 +25,7 @@ function showBox2form(contentForm: string) {
     // insert the content HTML into the div textContent
   }
 }
+
 function sectionDad(contentForm: string) {
   // add div show-content-box to the sectionDad
   const textContent = document.querySelector(".sectionDad") as HTMLElement;

@@ -18,7 +18,7 @@ function viewForm() {
   const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
   allTasks.sort((a, b) => a.id - b.id);
   // map the register to the form for display
-  allTasks.map((task: Tasks) => {
+  allTasks.forEach((task: Tasks) => {
     const dateDMY: string = task.date.split(",")[1].trim();
     const contexform = `
         <div class="text-content-box" data-key="${task.id}">

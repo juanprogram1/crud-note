@@ -14,6 +14,7 @@ function bottomShow() {
       const box2 = document.querySelector(".box2") as HTMLElement;
       const header = document.querySelector("header") as HTMLElement;
       const footer = document.querySelector("footer") as HTMLElement;
+      const saveChanges = document.querySelector(".btnSaveEdit") as HTMLElement;
       // get the info from localStorage
       const infoLocalStorageKey = localStorage.getItem(key!);
       // parse the JSON
@@ -56,6 +57,8 @@ function bottomShow() {
         header.classList.add("hidden");
         // add the classList of the footer
         footer.classList.add("hidden");
+        // add the classList of the saveChanges
+        saveChanges.classList.add("hidden");
       } else {
         alert("no existe contenido");
       }

@@ -13,6 +13,7 @@ function bottomEdit() {
       const box2 = document.querySelector(".box2") as HTMLElement;
       const header = document.querySelector("header") as HTMLElement;
       const footer = document.querySelector("footer") as HTMLElement;
+      const saveChanges = document.querySelector(".btnSaveEdit") as HTMLElement;
       // get the info from localStorage
       const infoLocalStorageKey = localStorage.getItem(key!);
       // parse the JSON
@@ -24,8 +25,8 @@ function bottomEdit() {
 
       const allModalInfo = `
         <div class="date-modal">${dateValue}</div>
-        <h3 id="title" class="title-modal" contenteditable="true">${titleValue}</h3>
-        <p id="textarea" class="textarea-modal" contenteditable="true">${textareaValue}</p>
+        <h3 id="title${key}" class="title-modal" contenteditable="true">${titleValue}</h3>
+        <p id="textarea${key}" class="textarea-modal" contenteditable="true">${textareaValue}</p>
       `;
 
       modalInfo.innerHTML = allModalInfo;
@@ -59,6 +60,30 @@ function bottomEdit() {
         header.classList.add("hidden");
         // add the classList of the footer
         footer.classList.add("hidden");
+        // add the classList of the saveChanges
+        saveChanges.classList.remove("hidden");
+
+        // ADD THE EVENT LISTENER TO THE SAVECHANGES BOTTON TO SAVE THE CHANGES
+        saveChanges.addEventListener("click", () => {
+          const obtainedTitle = document.querySelector<HTMLElement>(
+            "#title" + key,
+          )?.innerText;
+          const obtainedTextarea = document.querySelector<HTMLElement>(
+            "#textarea" + key,
+          )?.innerText;
+
+          if (obtainedTitle && obtainedTextarea) {
+            const allvalue = {
+              id: key,
+              title: obtainedTitle,
+              textarea: obtainedTextarea,
+              date: dateValue,
+            };
+
+            // save the form register in localStorage
+            localStorage.setItem(key!, JSON.stringify(allvalue));
+          }
+        });
       } else {
         alert("no existe contenido");
       }
