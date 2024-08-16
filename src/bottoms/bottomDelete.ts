@@ -1,3 +1,7 @@
+import { bottomEdit } from "./bottomEdit";
+import { bottomShow } from "./bottomShow";
+import { bottomClose } from "./bottomShow";
+
 function bottomDelete() {
   const deleteButtons = document.querySelectorAll(
     ".botonDelete",
@@ -14,6 +18,10 @@ function bottomDelete() {
         // remove the element from the DOM
         textContentBox.remove();
         localStorage.removeItem(key);
+        bottomEdit();
+        bottomShow();
+        bottomClose();
+        bottomDelete();
       }
     });
   });

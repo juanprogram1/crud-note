@@ -21,11 +21,11 @@ function viewForm() {
   allTasks.forEach((task: Tasks) => {
     const dateDMY: string = task.date.split(",")[1].trim();
     const contexform = `
-        <div class="text-content-box" data-key="${task.id}">
-        <div>
-          <h3 class="titleh3" data-key="${task.id}">${task.title}</h3>
-          <p class="date-text" data-key="${task.id}">${dateDMY}</p>
-          <p class="text-paragraph" data-key="${task.id}">${task.textarea}</p>
+        <div id="form${task.id}" class="text-content-box" data-key="${task.id}">
+          <div>
+            <h3 class="titleh3">${task.title}</h3>
+            <p class="date-text">${dateDMY}</p>
+            <p class="text-paragraph">${task.textarea}</p>
           </div>
                 <div class="container">
                   <div class="barraMostrar"></div>

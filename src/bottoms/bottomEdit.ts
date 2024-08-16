@@ -1,3 +1,8 @@
+import { getNowDate, showBox2form } from "../showDate_showContent";
+import { bottomDelete } from "./bottomDelete";
+import { bottomClose, bottomShow } from "./bottomShow";
+
+// function to edit the form
 function bottomEdit() {
   const editButtons = document.querySelectorAll(
     ".botonEdit",
@@ -71,17 +76,54 @@ function bottomEdit() {
           const obtainedTextarea = document.querySelector<HTMLElement>(
             "#textarea" + key,
           )?.innerText;
+          const date: string = getNowDate();
+          const dateValue: string = date.split(",")[1].trim();
+          const form = document.querySelector<HTMLElement>(`#form${key}`)!;
 
+          // if the form is not empty
           if (obtainedTitle && obtainedTextarea) {
+            // save in object to localStorage
             const allvalue = {
               id: key,
               title: obtainedTitle,
               textarea: obtainedTextarea,
-              date: dateValue,
+              date: date,
             };
+
+            const contextForm = `
+            <div id="form${key}" class="text-content-box" data-key="${key}">
+              <div>
+                <h3 class="titleh3">${obtainedTitle}</h3>
+                <p class="date-text">${dateValue}</p>
+                <p class="text-paragraph">${obtainedTextarea}</p>
+              </div>
+                  <div class="container">
+                    <div class="barraMostrar"></div>
+                    <button data-key="${key}" class="botonShow">Mostrar</button>
+                  </div>
+                  <div class="container">
+                    <div class="barra"></div>
+                    <button data-key="${key}" class="botonEdit">Editar</button>
+                  </div>
+                  <div class="container">
+                    <div class="barraDelete"></div>
+                    <button data-key="${key}" class="botonDelete">Borrar</button>
+                  </div>
+            </div>
+    `;
+
+            if (form !== null && key !== null) {
+              form.remove();
+              localStorage.removeItem(key!);
+              showBox2form(contextForm);
+            }
 
             // save the form register in localStorage
             localStorage.setItem(key!, JSON.stringify(allvalue));
+            bottomEdit();
+            bottomShow();
+            bottomClose();
+            bottomDelete();
           }
         });
       } else {

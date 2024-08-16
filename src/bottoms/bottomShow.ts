@@ -1,3 +1,6 @@
+import { bottomDelete } from "./bottomDelete";
+import { bottomEdit } from "./bottomEdit";
+
 function bottomShow() {
   const showButtons = document.querySelectorAll(
     ".botonShow",
@@ -59,6 +62,10 @@ function bottomShow() {
         footer.classList.add("hidden");
         // add the classList of the saveChanges
         saveChanges.classList.add("hidden");
+        bottomEdit();
+        bottomShow();
+        bottomClose();
+        bottomDelete();
       } else {
         alert("no existe contenido");
       }
