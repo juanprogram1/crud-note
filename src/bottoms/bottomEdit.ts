@@ -28,12 +28,14 @@ function bottomEdit() {
       const textareaValue: string = JSONInfoLocalStorageKey.textarea;
       const dateValue: string = JSONInfoLocalStorageKey.date;
 
+      // create the modalInfo
       const allModalInfo = `
         <div class="date-modal">${dateValue}</div>
-        <h3 id="title${key}" class="title-modal" contenteditable="true">${titleValue}</h3>
-        <p id="textarea${key}" class="textarea-modal" contenteditable="true">${textareaValue}</p>
+        <h3 id="title${key}" class="title-modal title-modal-edit" contenteditable="true">${titleValue}</h3>
+        <p id="textarea${key}" class="textarea-modal textarea-modal-edit" contenteditable="true">${textareaValue}</p>
       `;
 
+      // add the AllModalInfo to the modalInfo
       modalInfo.innerHTML = allModalInfo;
 
       // if the exist classList
@@ -112,6 +114,7 @@ function bottomEdit() {
             </div>
     `;
 
+            // if the form exist and the key exist
             if (form !== null && key !== null) {
               form.remove();
               localStorage.removeItem(key!);
@@ -120,14 +123,63 @@ function bottomEdit() {
 
             // save the form register in localStorage
             localStorage.setItem(key!, JSON.stringify(allvalue));
+            // call the function to show the form innicialize the bottoms
             bottomEdit();
             bottomShow();
             bottomClose();
             bottomDelete();
           }
+
+          // get the messageBoxEdit
+          const editMessageBox =
+            document.querySelector<HTMLElement>("#messageBoxEdit")!;
+
+          // show the messageBoxEdit
+          if (editMessageBox !== null) {
+            // remove the classList hide of the messageBoxEdit
+            editMessageBox.classList.remove("hidden");
+            editMessageBox.style.display = "block";
+            editMessageBox.animate(
+              [
+                {
+                  opacity: 0,
+                  transform: "translateY(60%)",
+                },
+                {
+                  opacity: 1,
+                  transform: "translateY(80%)",
+                },
+              ],
+              {
+                duration: 700,
+                easing: "ease-in-out",
+                fill: "forwards",
+              },
+            );
+
+            // hide the messageBoxEdit
+            setTimeout(() => {
+              // animation to hide the messageBoxEdit
+              editMessageBox.animate(
+                [
+                  {
+                    opacity: 1,
+                    transform: "translateY(80%)",
+                  },
+                  {
+                    opacity: 0,
+                    transform: "translateY(60%)",
+                  },
+                ],
+                {
+                  duration: 700,
+                  easing: "ease-in-out",
+                  fill: "forwards",
+                },
+              );
+            }, 1500);
+          }
         });
-      } else {
-        alert("no existe contenido");
       }
     });
   });

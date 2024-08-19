@@ -23,6 +23,56 @@ function bottomDelete() {
         bottomClose();
         bottomDelete();
       }
+
+      // get the messageBoxEdit
+      const deleteMessageBox =
+        document.querySelector<HTMLElement>("#messageBoxDelete")!;
+
+      // show the messageBoxEdit
+      if (deleteMessageBox !== null) {
+        // remove the classList hide of the messageBoxEdit
+        deleteMessageBox.classList.remove("hidden");
+        deleteMessageBox.style.display = "block";
+        deleteMessageBox.animate(
+          [
+            {
+              opacity: 0,
+              transform: "translateY(60%)",
+            },
+            {
+              opacity: 1,
+              transform: "translateY(80%)",
+            },
+          ],
+          {
+            duration: 400,
+            easing: "ease-in-out",
+            fill: "forwards",
+          },
+        );
+
+        // hide the messageBoxEdit
+        setTimeout(() => {
+          // animation to hide the messageBoxEdit
+          deleteMessageBox.animate(
+            [
+              {
+                opacity: 1,
+                transform: "translateY(80%)",
+              },
+              {
+                opacity: 0,
+                transform: "translateY(60%)",
+              },
+            ],
+            {
+              duration: 400,
+              easing: "ease-in-out",
+              fill: "forwards",
+            },
+          );
+        }, 1200);
+      }
     });
   });
 }

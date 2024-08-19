@@ -45,6 +45,7 @@ main {
 
 .hidden {
   display: none;
+  opacity: 0;
 }
 
 /* Content section and div */
@@ -334,7 +335,7 @@ input[type="text"]::placeholder {
   right: 68%;
   width: 25%;
   height: 8px;
-  border-bottom: 8px solid rgba(0, 205, 255, 0.702);
+  border-bottom: 8px solid #00cdffb3;
   box-shadow: 0 0 5px #00aeffb3;
   transition: transform 0.1s ease-in-out;
   /* effect of slide */
@@ -535,6 +536,7 @@ input[type="text"]::placeholder {
   font-weight: 500;
   font-style: oblique;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 /* Textarea of modal */
@@ -589,4 +591,48 @@ input[type="text"]::placeholder {
   position: relative;
   top: 1px;
   height: 36px;
+}
+
+.btnSaveEdit:active {
+  transform: scale(0.98);
+}
+
+/* title-modal-edit */
+.title-modal-edit {
+  border: 2px solid #ffffffcd;
+  border-radius: 4px;
+}
+
+/* textarea-modal-edit */
+.textarea-modal-edit {
+  border: 2px solid #ffffffcd;
+  border-radius: 4px;
+}
+
+/* editado-save */
+.editado-save {
+  font-family: "segoe ui", sans-serif;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background-color: #44bd32;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+/* delete-box */
+.delete-box {
+  font-family: "segoe ui", sans-serif;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background-color: #ff3e34;
+  padding: 16px;
+  margin: 10px;
+  border-radius: 5px;
 }
