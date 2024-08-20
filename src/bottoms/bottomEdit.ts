@@ -83,7 +83,7 @@ function bottomEdit() {
           const form = document.querySelector<HTMLElement>(`#form${key}`)!;
 
           // if the form is not empty
-          if (obtainedTitle && obtainedTextarea) {
+          if (obtainedTitle !== "" && obtainedTextarea !== "") {
             // save in object to localStorage
             const allvalue = {
               id: key,
@@ -128,14 +128,61 @@ function bottomEdit() {
             bottomShow();
             bottomClose();
             bottomDelete();
+          } else {
+            // if the title and textarea are empty
+            if (obtainedTitle === "" || obtainedTextarea === "") {
+              const messageValidate =
+                document.querySelector<HTMLElement>("#messageValidate")!;
+              // show the messageValidate
+              messageValidate.classList.remove("hidden");
+
+              messageValidate.animate(
+                [
+                  {
+                    opacity: 0,
+                    transform: "translateY(60%)",
+                  },
+                  {
+                    opacity: 1,
+                    transform: "translateY(80%)",
+                  },
+                ],
+                {
+                  duration: 700,
+                  easing: "ease-in-out",
+                  fill: "forwards",
+                },
+              );
+
+              // hide the messageValidate
+              setTimeout(() => {
+                // animation to hide the messageValidate
+                messageValidate.animate(
+                  [
+                    {
+                      opacity: 1,
+                      transform: "translateY(80%)",
+                    },
+                    {
+                      opacity: 0,
+                      transform: "translateY(60%)",
+                    },
+                  ],
+                  {
+                    duration: 700,
+                    easing: "ease-in-out",
+                    fill: "forwards",
+                  },
+                );
+              }, 1500);
+            }
           }
 
-          // get the messageBoxEdit
-          const editMessageBox =
-            document.querySelector<HTMLElement>("#messageBoxEdit")!;
-
           // show the messageBoxEdit
-          if (editMessageBox !== null) {
+          if (obtainedTitle !== "" && obtainedTextarea !== "") {
+            // get the messageBoxEdit
+            const editMessageBox =
+              document.querySelector<HTMLElement>("#messageBoxEdit")!;
             // remove the classList hide of the messageBoxEdit
             editMessageBox.classList.remove("hidden");
             editMessageBox.style.display = "block";
@@ -177,7 +224,7 @@ function bottomEdit() {
                   fill: "forwards",
                 },
               );
-            }, 1500);
+            }, 1800);
           }
         });
       }

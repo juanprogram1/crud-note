@@ -636,3 +636,31 @@ input[type="text"]::placeholder {
   margin: 10px;
   border-radius: 5px;
 }
+
+/* message-validate */
+.message-validate {
+  font-family: "segoe ui", sans-serif;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 680px;
+  background-color: #e55039;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+/* message-validate-form */
+.message-validate-form {
+  font-family: "segoe ui", sans-serif;
+  font-size: 15px;
+  color: white;
+  position: absolute;
+  top: -20px;
+  left: 400px;
+  background-color: #e55039;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 5px;
+}
