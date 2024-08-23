@@ -1,6 +1,7 @@
 import { getNowDate, showBox2form } from "../showDate_showContent";
-import { bottomDelete } from "./bottomDelete";
+import { Tasks } from "../designate";
 import { bottomClose, bottomShow } from "./bottomShow";
+import { bottomDelete } from "./bottomDelete";
 
 // function to edit the form
 function bottomEdit() {
@@ -30,9 +31,11 @@ function bottomEdit() {
 
       // create the modalInfo
       const allModalInfo = `
+      <div id="modal-info-secondary" data-key="${key}">
         <div class="date-modal">${dateValue}</div>
         <h3 id="title${key}" class="title-modal title-modal-edit" contenteditable="true">${titleValue}</h3>
         <p id="textarea${key}" class="textarea-modal textarea-modal-edit" contenteditable="true">${textareaValue}</p>
+      </div>
       `;
 
       // add the AllModalInfo to the modalInfo
@@ -69,167 +72,87 @@ function bottomEdit() {
         footer.classList.add("hidden");
         // add the classList of the saveChanges
         saveChanges.classList.remove("hidden");
-
-        // ADD THE EVENT LISTENER TO THE SAVECHANGES BOTTON TO SAVE THE CHANGES
-        saveChanges.addEventListener("click", () => {
-          const obtainedTitle = document.querySelector<HTMLElement>(
-            "#title" + key,
-          )?.innerText;
-          const obtainedTextarea = document.querySelector<HTMLElement>(
-            "#textarea" + key,
-          )?.innerText;
-          const date: string = getNowDate();
-          const dateValue: string = date.split(",")[1].trim();
-          const form = document.querySelector<HTMLElement>(`#form${key}`)!;
-
-          // if the form is not empty
-          if (obtainedTitle !== "" && obtainedTextarea !== "") {
-            // save in object to localStorage
-            const allvalue = {
-              id: key,
-              title: obtainedTitle,
-              textarea: obtainedTextarea,
-              date: date,
-            };
-
-            const contextForm = `
-            <div id="form${key}" class="text-content-box" data-key="${key}">
-              <div>
-                <h3 class="titleh3">${obtainedTitle}</h3>
-                <p class="date-text">${dateValue}</p>
-                <p class="text-paragraph">${obtainedTextarea}</p>
-              </div>
-                  <div class="container">
-                    <div class="barraMostrar"></div>
-                    <button data-key="${key}" class="botonShow">Mostrar</button>
-                  </div>
-                  <div class="container">
-                    <div class="barra"></div>
-                    <button data-key="${key}" class="botonEdit">Editar</button>
-                  </div>
-                  <div class="container">
-                    <div class="barraDelete"></div>
-                    <button data-key="${key}" class="botonDelete">Borrar</button>
-                  </div>
-            </div>
-    `;
-
-            // if the form exist and the key exist
-            if (form !== null && key !== null) {
-              form.remove();
-              localStorage.removeItem(key!);
-              showBox2form(contextForm);
-            }
-
-            // save the form register in localStorage
-            localStorage.setItem(key!, JSON.stringify(allvalue));
-            // call the function to show the form innicialize the bottoms
-            bottomEdit();
-            bottomShow();
-            bottomClose();
-            bottomDelete();
-          } else {
-            // if the title and textarea are empty
-            if (obtainedTitle === "" || obtainedTextarea === "") {
-              const messageValidate =
-                document.querySelector<HTMLElement>("#messageValidate")!;
-              // show the messageValidate
-              messageValidate.classList.remove("hidden");
-
-              messageValidate.animate(
-                [
-                  {
-                    opacity: 0,
-                    transform: "translateY(60%)",
-                  },
-                  {
-                    opacity: 1,
-                    transform: "translateY(80%)",
-                  },
-                ],
-                {
-                  duration: 700,
-                  easing: "ease-in-out",
-                  fill: "forwards",
-                },
-              );
-
-              // hide the messageValidate
-              setTimeout(() => {
-                // animation to hide the messageValidate
-                messageValidate.animate(
-                  [
-                    {
-                      opacity: 1,
-                      transform: "translateY(80%)",
-                    },
-                    {
-                      opacity: 0,
-                      transform: "translateY(60%)",
-                    },
-                  ],
-                  {
-                    duration: 700,
-                    easing: "ease-in-out",
-                    fill: "forwards",
-                  },
-                );
-              }, 1500);
-            }
-          }
-
-          // show the messageBoxEdit
-          if (obtainedTitle !== "" && obtainedTextarea !== "") {
-            // get the messageBoxEdit
-            const editMessageBox =
-              document.querySelector<HTMLElement>("#messageBoxEdit")!;
-            // remove the classList hide of the messageBoxEdit
-            editMessageBox.classList.remove("hidden");
-            editMessageBox.style.display = "block";
-            editMessageBox.animate(
-              [
-                {
-                  opacity: 0,
-                  transform: "translateY(60%)",
-                },
-                {
-                  opacity: 1,
-                  transform: "translateY(80%)",
-                },
-              ],
-              {
-                duration: 700,
-                easing: "ease-in-out",
-                fill: "forwards",
-              },
-            );
-
-            // hide the messageBoxEdit
-            setTimeout(() => {
-              // animation to hide the messageBoxEdit
-              editMessageBox.animate(
-                [
-                  {
-                    opacity: 1,
-                    transform: "translateY(80%)",
-                  },
-                  {
-                    opacity: 0,
-                    transform: "translateY(60%)",
-                  },
-                ],
-                {
-                  duration: 700,
-                  easing: "ease-in-out",
-                  fill: "forwards",
-                },
-              );
-            }, 1800);
-          }
-        });
       }
     });
   });
 }
 
-export { bottomEdit };
+function saveChanges() {
+  // clear the text-content
+  const textContent = document.getElementById("text-content");
+  textContent!.innerHTML = "";
+
+  /* initialize the variables */
+  const idModalInfoSecondary = document.getElementById("modal-info-secondary");
+  const key = idModalInfoSecondary!.dataset.key;
+  const title = document.getElementById("title" + key)?.innerText;
+  const textarea = document.getElementById("textarea" + key)?.innerText;
+  const date = getNowDate();
+
+  /* validate the title and textarea */
+  if (title === "") {
+    alert("El título no puede estar vacío");
+  } else if (textarea === "") {
+    alert("El contenido no puede estar vacío");
+  }
+
+  /* save the changes */
+  const infoLocalStorageKey = localStorage.getItem(key!);
+  // parse the JSON
+  const JSONInfoLocalStorageKey = JSON.parse(infoLocalStorageKey!);
+  JSONInfoLocalStorageKey.title = title;
+  JSONInfoLocalStorageKey.textarea = textarea;
+  JSONInfoLocalStorageKey.date = date;
+  // stringify the JSON
+  const JSONInfoLocalStorageKeyString = JSON.stringify(JSONInfoLocalStorageKey);
+  // save the changes in localStorage
+  localStorage.setItem(key!, JSONInfoLocalStorageKeyString);
+
+  /* ---------------- Upload the changes to the text-content to localStorage --------------- */
+
+  // get all keys from localStorage
+  const allKeys: string[] = Object.keys(localStorage);
+
+  // get all values from localStorage
+  const allValues: (string | null)[] = allKeys.map((key) =>
+    localStorage.getItem(key),
+  );
+
+  // parse all values to FormRegister
+  const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
+  allTasks.sort((a, b) => a.id - b.id);
+
+  // map the register to the form for display
+  allTasks.forEach((task: Tasks) => {
+    const dateDMY: string = task.date.split(",")[1].trim();
+    const contexform = `
+         <div id="form${task.id}" class="text-content-box" data-key="${task.id}">
+           <div>
+             <h3 class="titleh3">${task.title}</h3>
+             <p class="date-text">${dateDMY}</p>
+             <p class="text-paragraph">${task.textarea}</p>
+           </div>
+                 <div class="container">
+                   <div class="barraMostrar"></div>
+                   <button data-key="${task.id}" class="botonShow">Mostrar</button>
+                 </div>
+                 <div class="container">
+                   <div class="barra"></div>
+                   <button data-key="${task.id}" class="botonEdit">Editar</button>
+                 </div>
+                 <div class="container">
+                   <div class="barraDelete"></div>
+                   <button data-key="${task.id}" class="botonDelete">Borrar</button>
+                 </div>
+         </div>
+       `;
+
+    showBox2form(contexform);
+    bottomEdit();
+    bottomShow();
+    bottomClose();
+    bottomDelete();
+  });
+}
+
+export { bottomEdit, saveChanges };

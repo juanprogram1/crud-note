@@ -73,55 +73,7 @@ function saveForm() {
     title.value = ""; // clean the title input
     textarea.value = ""; // clean the textarea input
   } else {
-    if (titleValue === "" || textareaValue === "") {
-      const messageValidate = document.querySelector<HTMLElement>(
-        "#messageValidate-form",
-      )!;
-      // show the messageValidateForm
-      messageValidate.classList.remove("hidden");
-      // show the messageValidate
-      messageValidate.classList.remove("hidden");
-
-      messageValidate.animate(
-        [
-          {
-            opacity: 0,
-            transform: "translateY(60%)",
-          },
-          {
-            opacity: 1,
-            transform: "translateY(80%)",
-          },
-        ],
-        {
-          duration: 700,
-          easing: "ease-in-out",
-          fill: "forwards",
-        },
-      );
-
-      // hide the messageValidate
-      setTimeout(() => {
-        // animation to hide the messageValidate
-        messageValidate.animate(
-          [
-            {
-              opacity: 1,
-              transform: "translateY(80%)",
-            },
-            {
-              opacity: 0,
-              transform: "translateY(60%)",
-            },
-          ],
-          {
-            duration: 700,
-            easing: "ease-in-out",
-            fill: "forwards",
-          },
-        );
-      }, 2000);
-    }
+    alert("Debe rellenar todos los campos");
   }
   bottomDelete();
   bottomShow();

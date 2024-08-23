@@ -2,6 +2,7 @@ import "./css/index.css";
 import { getNowDate } from "./showDate_showContent";
 import { saveForm } from "./saveForm";
 import { viewForm } from "./viewForm";
+import { saveChanges } from "./bottoms/bottomEdit";
 
 // bottomShow Form
 document.getElementById("bottomShow")?.addEventListener("click", function () {
@@ -57,3 +58,6 @@ document.getElementById("btnSave")?.addEventListener("click", saveForm);
 document.addEventListener("DOMContentLoaded", () => {
   viewForm();
 });
+
+// saveChanges function
+document.getElementById("saveChanges")?.addEventListener("click", saveChanges);
