@@ -75,6 +75,24 @@ section {
   border-radius: 10px;
   align-items: center;
   flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Scrool of box2 */
+.box2::-webkit-scrollbar-track {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.box2::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.102);
+}
+
+.box2::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 213, 213, 0.5);
+  border-radius: 10px;
 }
 
 /* Design responsive*/
@@ -226,28 +244,10 @@ input[type="text"]::placeholder {
   height: 758px;
   resize: none;
   outline: none;
-  overflow-y: auto;
   justify-items: center;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 10rem 10rem 10rem 10rem 10rem;
   margin-top: -20px;
-}
-
-/* Scrool of text-content */
-.text-content::-webkit-scrollbar-track {
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-.text-content::-webkit-scrollbar {
-  width: 12px;
-  background-color: rgba(255, 255, 255, 0.102);
-}
-
-.text-content::-webkit-scrollbar-thumb {
-  background-color: rgb(217, 213, 213, 0.5);
-  border-radius: 10px;
 }
 
 .text-content-box {
@@ -609,57 +609,16 @@ input[type="text"]::placeholder {
   border-radius: 4px;
 }
 
-/* editado-save */
-/* .editado-save {
-  font-family: "segoe ui", sans-serif;
-  font-size: 18px;
-  color: white;
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  background-color: #44bd32;
-  padding: 18px;
-  margin: 10px;
-  border-radius: 5px;
-} */
+/* Validation message */
 
-/* delete-box */
-/* .delete-box {
-  font-family: "segoe ui", sans-serif;
-  font-size: 18px;
-  color: white;
-  position: relative;
-  top: 0px;
-  background-color: #ff3e34;
-  padding: 16px;
-  margin: 10px;
-  border-radius: 5px;
-} */
-
-/* message-validate */
-/* .message-validate {
-  font-family: "segoe ui", sans-serif;
-  font-size: 18px;
-  color: white;
+.message-warning {
+  font-family: "Roboto Mono", cursive;
   position: absolute;
-  top: 10px;
-  right: 680px;
-  background-color: #e55039;
-  padding: 18px;
-  margin: 10px;
-  border-radius: 5px;
-} */
+  top: 68px;
+  margin-left: 20px;
+  background-color: #fa8231;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
 
-/* message-validate-form */
-/* .message-validate-form {
-  font-family: "segoe ui", sans-serif;
-  font-size: 15px;
-  color: white;
-  position: absolute;
-  top: -20px;
-  left: 400px;
-  background-color: #e55039;
-  padding: 18px;
-  margin: 10px;
-  border-radius: 5px;
-} */
+/* animation of the message-warning */

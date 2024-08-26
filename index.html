@@ -23,7 +23,10 @@
       </button>
 
       <div id="hiddenContent" class="hidden">
-        <section class="sectionDad">
+        <div class="message-warning hidden">
+          ⚠️ Debe rellenar todos los campos ⚠️
+        </div>
+        <section id="sectiondad" class="sectionDad">
           <!--  box1 -->
           <div class="box1">
             <!-- form -->
@@ -34,6 +37,7 @@
                 name="title"
                 id="title"
                 placeholder="Titulo..."
+                required
               />
               <!-- form date -->
               <div id="date" class="nowDate"></div>
@@ -42,6 +46,7 @@
                 name="textarea"
                 id="writenote"
                 placeholder="Escribe tu nota..."
+                required
               ></textarea>
               <!-- form submit -->
               <button

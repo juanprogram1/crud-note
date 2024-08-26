@@ -73,7 +73,12 @@ function saveForm() {
     title.value = ""; // clean the title input
     textarea.value = ""; // clean the textarea input
   } else {
-    alert("Debe rellenar todos los campos");
+    const messaegeWarning = document.querySelector(".message-warning");
+
+    if (titleValue === "" || textareaValue === "") {
+      // show the message warning
+      messaegeWarning!.classList.remove("hidden");
+    }
   }
   bottomDelete();
   bottomShow();
