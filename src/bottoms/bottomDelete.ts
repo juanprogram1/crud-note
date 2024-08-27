@@ -14,6 +14,17 @@ function bottomDelete() {
         // remove the element from the DOM
         textContentBox.remove();
         localStorage.removeItem(key);
+
+        const messageDelete = document.getElementById("message-delete");
+        messageDelete!.classList.remove("hidden");
+        messageDelete!.classList.remove("hide-message");
+        messageDelete!.classList.add("show-message");
+
+        // setTimeout to hide the message after 1.3 seconds
+        setTimeout(() => {
+          messageDelete!.classList.remove("show-message");
+          messageDelete!.classList.add("hide-message");
+        }, 1300);
       }
     });
   });

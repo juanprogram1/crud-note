@@ -152,6 +152,18 @@ function saveChanges() {
     bottomShow();
     bottomClose();
     bottomDelete();
+
+    /* show the message edit */
+    const messageEdit = document.querySelector(".message-edit");
+    messageEdit!.classList.remove("hidden");
+    messageEdit!.classList.remove("hide-message");
+    messageEdit!.classList.add("show-message");
+
+    // setTimeout to hide the message after 1.5 seconds
+    setTimeout(() => {
+      messageEdit!.classList.remove("show-message");
+      messageEdit!.classList.add("hide-message");
+    }, 1500);
   });
 }
 

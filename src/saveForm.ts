@@ -73,11 +73,20 @@ function saveForm() {
     title.value = ""; // clean the title input
     textarea.value = ""; // clean the textarea input
   } else {
-    const messaegeWarning = document.querySelector(".message-warning");
+    const messageWarning = document.querySelector(".message-warning");
 
     if (titleValue === "" || textareaValue === "") {
-      // show the message warning
-      messaegeWarning!.classList.remove("hidden");
+      // remove the hidden class to show the message warning
+      messageWarning!.classList.remove("hidden");
+      messageWarning!.classList.remove("hide-message");
+      messageWarning!.classList.add("show-message");
+
+      /* setTimeout to hide the message after 2.5 seconds */
+      setTimeout(() => {
+        /* remove the show-message class to hide the message */
+        messageWarning!.classList.remove("show-message");
+        messageWarning!.classList.add("hide-message");
+      }, 2500);
     }
   }
   bottomDelete();
