@@ -29,15 +29,12 @@ function viewForm() {
             <p class="text-paragraph">${task.textarea}</p>
           </div>
                 <div class="container">
-                  <div class="barraMostrar"></div>
                   <button data-key="${task.id}" class="botonShow">Mostrar</button>
                 </div>
                 <div class="container">
-                  <div class="barra"></div>
                   <button data-key="${task.id}" class="botonEdit">Editar</button>
                 </div>
                 <div class="container">
-                  <div class="barraDelete"></div>
                   <button data-key="${task.id}" class="botonDelete">Borrar</button>
                 </div>
         </div>

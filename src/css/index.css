@@ -353,7 +353,7 @@ input[type="text"]::placeholder {
   width: 25%;
   bottom: 0;
   right: 68%;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.1s ease-in-out;
   /* effect of appearance */
   border: none;
@@ -399,7 +399,7 @@ input[type="text"]::placeholder {
   bottom: 0;
   right: 37%;
   width: 25%;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.1s ease-in-out;
   /* effect of appearance */
   border: none;
@@ -445,7 +445,7 @@ input[type="text"]::placeholder {
   bottom: 0;
   right: 6%;
   width: 25%;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.1s ease-in-out;
   /* effect of appearance */
   border: none;
