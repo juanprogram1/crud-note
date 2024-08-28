@@ -78,93 +78,102 @@ function bottomEdit() {
 }
 
 function saveChanges() {
-  // clear the text-content
-  const textContent = document.getElementById("text-content");
-  textContent!.innerHTML = "";
-
   /* initialize the variables */
   const idModalInfoSecondary = document.getElementById("modal-info-secondary");
   const key = idModalInfoSecondary!.dataset.key;
-  const title = document.getElementById("title" + key)?.innerText;
-  const textarea = document.getElementById("textarea" + key)?.innerText;
+  const title = document.getElementById("title" + key)?.innerText.trim();
+  const textarea = document.getElementById("textarea" + key)?.innerText.trim();
   const date = getNowDate();
 
-  /* validate the title and textarea */
-  if (title === "") {
-    alert("El título no puede estar vacío");
-  } else if (textarea === "") {
-    alert("El contenido no puede estar vacío");
-  }
+  if (title !== "" && textarea !== "") {
+    // clear the text-content
+    const textContent = document.getElementById("text-content");
+    textContent!.innerHTML = "";
+    /* save the changes */
+    const infoLocalStorageKey = localStorage.getItem(key!);
+    // parse the JSON
+    const JSONInfoLocalStorageKey = JSON.parse(infoLocalStorageKey!);
+    JSONInfoLocalStorageKey.title = title;
+    JSONInfoLocalStorageKey.textarea = textarea;
+    JSONInfoLocalStorageKey.date = date;
+    // stringify the JSON
+    const JSONInfoLocalStorageKeyString = JSON.stringify(
+      JSONInfoLocalStorageKey,
+    );
+    // save the changes in localStorage
+    localStorage.setItem(key!, JSONInfoLocalStorageKeyString);
 
-  /* save the changes */
-  const infoLocalStorageKey = localStorage.getItem(key!);
-  // parse the JSON
-  const JSONInfoLocalStorageKey = JSON.parse(infoLocalStorageKey!);
-  JSONInfoLocalStorageKey.title = title;
-  JSONInfoLocalStorageKey.textarea = textarea;
-  JSONInfoLocalStorageKey.date = date;
-  // stringify the JSON
-  const JSONInfoLocalStorageKeyString = JSON.stringify(JSONInfoLocalStorageKey);
-  // save the changes in localStorage
-  localStorage.setItem(key!, JSONInfoLocalStorageKeyString);
+    /* ---------------- Upload the changes to the text-content to localStorage --------------- */
 
-  /* ---------------- Upload the changes to the text-content to localStorage --------------- */
+    // get all keys from localStorage
+    const allKeys: string[] = Object.keys(localStorage);
 
-  // get all keys from localStorage
-  const allKeys: string[] = Object.keys(localStorage);
+    // get all values from localStorage
+    const allValues: (string | null)[] = allKeys.map((key) =>
+      localStorage.getItem(key),
+    );
 
-  // get all values from localStorage
-  const allValues: (string | null)[] = allKeys.map((key) =>
-    localStorage.getItem(key),
-  );
+    // parse all values to FormRegister
+    const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
+    allTasks.sort((a, b) => a.id - b.id);
 
-  // parse all values to FormRegister
-  const allTasks: Tasks[] = allValues.map((value) => JSON.parse(value!));
-  allTasks.sort((a, b) => a.id - b.id);
-
-  // map the register to the form for display
-  allTasks.forEach((task: Tasks) => {
-    const dateDMY: string = task.date.split(",")[1].trim();
-    const contexform = `
-         <div id="form${task.id}" class="text-content-box" data-key="${task.id}">
-           <div>
-             <h3 class="titleh3">${task.title}</h3>
-             <p class="date-text">${dateDMY}</p>
-             <p class="text-paragraph">${task.textarea}</p>
-           </div>
-                 <div class="container">
-                   <div class="barraMostrar"></div>
-                   <button data-key="${task.id}" class="botonShow">Mostrar</button>
-                 </div>
-                 <div class="container">
-                   <div class="barra"></div>
-                   <button data-key="${task.id}" class="botonEdit">Editar</button>
-                 </div>
-                 <div class="container">
-                   <div class="barraDelete"></div>
-                   <button data-key="${task.id}" class="botonDelete">Borrar</button>
-                 </div>
+    // map the register to the form for display
+    allTasks.forEach((task: Tasks) => {
+      const dateDMY: string = task.date.split(",")[1].trim();
+      const contexform = `
+       <div id="form${task.id}" class="text-content-box" data-key="${task.id}">
+         <div>
+           <h3 class="titleh3">${task.title}</h3>
+           <p class="date-text">${dateDMY}</p>
+           <p class="text-paragraph">${task.textarea}</p>
          </div>
-       `;
+               <div class="container">
+                 <div class="barraMostrar"></div>
+                 <button data-key="${task.id}" class="botonShow">Mostrar</button>
+               </div>
+               <div class="container">
+                 <div class="barra"></div>
+                 <button data-key="${task.id}" class="botonEdit">Editar</button>
+               </div>
+               <div class="container">
+                 <div class="barraDelete"></div>
+                 <button data-key="${task.id}" class="botonDelete">Borrar</button>
+               </div>
+       </div>
+     `;
 
-    showBox2form(contexform);
-    bottomEdit();
-    bottomShow();
-    bottomClose();
-    bottomDelete();
+      showBox2form(contexform);
+      bottomEdit();
+      bottomShow();
+      bottomClose();
+      bottomDelete();
 
-    /* show the message edit */
-    const messageEdit = document.querySelector(".message-edit");
-    messageEdit!.classList.remove("hidden");
-    messageEdit!.classList.remove("hide-message");
-    messageEdit!.classList.add("show-message");
+      /* show the message edit save */
+      const messageEdit = document.querySelector(".message-save-edit");
+      messageEdit!.classList.remove("hidden");
+      messageEdit!.classList.remove("hide-message");
+      messageEdit!.classList.add("show-message");
 
-    // setTimeout to hide the message after 1.5 seconds
-    setTimeout(() => {
-      messageEdit!.classList.remove("show-message");
-      messageEdit!.classList.add("hide-message");
-    }, 1500);
-  });
+      // setTimeout to hide the message after 1.5 seconds
+      setTimeout(() => {
+        messageEdit!.classList.remove("show-message");
+        messageEdit!.classList.add("hide-message");
+      }, 900);
+    });
+  } else {
+    if (title === "" || textarea === "") {
+      const messageEdit = document.querySelector(".message-warning-edit");
+      messageEdit!.classList.remove("hidden");
+      messageEdit!.classList.remove("hide-message");
+      messageEdit!.classList.add("show-message");
+
+      // setTimeout to hide the message after 1.5 seconds
+      setTimeout(() => {
+        messageEdit!.classList.remove("show-message");
+        messageEdit!.classList.add("hide-message");
+      }, 1500);
+    }
+  }
 }
 
 export { bottomEdit, saveChanges };

@@ -50,12 +50,12 @@ main {
 
 /* Content section and div */
 section {
-  margin-right: 160px;
+  margin-right: 100px;
   height: 768px;
   max-width: 1026px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10rem;
+  gap: 11rem;
 }
 
 .box1 {
@@ -495,11 +495,11 @@ input[type="text"]::placeholder {
 /* Modal-container new windows show */
 .container-modal {
   color: #f5f6fa;
-  position: absolute;
+  position: relative;
   width: 800px;
   height: 660px;
-  top: 150px;
-  left: calc(50% - 400px);
+  top: 100px;
+  left: 160px;
   background: linear-gradient(320deg, #699ff08f 50%, #18e0d6b9 100%);
   border-radius: 25px;
 }
@@ -649,12 +649,12 @@ input[type="text"]::placeholder {
 
 /* class to apply the animation */
 .show-message {
-  animation: showMessage 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: showMessage 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* close to hide the message */
 .hide-message {
-  animation: hideMessage 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: hideMessage 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* Here starts the information of the message delete */
@@ -669,13 +669,24 @@ input[type="text"]::placeholder {
   border-radius: 4px;
 }
 
-/* Here starts the information of the message edit */
+/* Here starts the information of the message edit and warning */
 
-.message-edit {
+.message-warning-edit {
+  font-family: "Roboto Mono", cursive;
+  position: absolute;
+  top: 70px;
+  margin-right: 40px;
+  font-size: 18px;
+  background-color: #fa8231;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.message-save-edit {
   font-family: "Segoe UI", Geneva, Verdana, sans-serif;
   position: absolute;
-  top: 150px;
-  margin-left: 1100px;
+  top: 130px;
+  margin-left: 980px;
   font-size: 20px;
   background-color: #4caf50;
   padding: 12px;

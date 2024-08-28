@@ -75,6 +75,7 @@ function saveForm() {
   } else {
     const messageWarning = document.querySelector(".message-warning");
 
+    /* if the title and textarea are empty */
     if (titleValue === "" || textareaValue === "") {
       // remove the hidden class to show the message warning
       messageWarning!.classList.remove("hidden");
