@@ -100,7 +100,7 @@ section {
 @media (max-width: 1200px) {
   section {
     grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     margin-right: 0px;
   }
 
@@ -504,6 +504,18 @@ input[type="text"]::placeholder {
   border-radius: 25px;
 }
 
+/* here starts responsive design of the container-modal */
+@media (max-width: 1200px) {
+  .container-modal {
+    max-width: 45%;
+    margin: 0 auto;
+    top: 30px;
+    left: 0;
+    background: linear-gradient(320deg, #699ff08f 50%, #18e0d6b9 100%);
+    border-radius: 25px;
+  }
+}
+
 /* Modal info */
 .modal-info {
   position: relative;
@@ -555,6 +567,16 @@ input[type="text"]::placeholder {
   line-height: 1.6;
 }
 
+/* here starts responsive design of the textarea-modal */
+@media (max-width: 1200px) {
+  body .textarea-modal {
+    top: 110px !important; /* change the top value to fit the design */
+    bottom: 90px !important;
+    padding: 0 20px 20px 20px !important;
+    margin: 10px !important;
+  }
+}
+
 /* Scrool of writenote */
 .textarea-modal::-webkit-scrollbar-track {
   border: 5px solid rgba(255, 255, 255, 0.3);
@@ -583,6 +605,12 @@ input[type="text"]::placeholder {
   border-radius: 4px;
   border: 2px solid #ffffff66;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  #saveChanges {
+    left: 25px;
+  }
 }
 
 #saveChanges:hover {
@@ -621,6 +649,16 @@ input[type="text"]::placeholder {
   background-color: #fa8231;
   padding: 6px 12px;
   border-radius: 4px;
+}
+
+/* here starts responsive design of the message warning */
+@media (max-width: 1200px) {
+  .message-warning {
+    top: 58px;
+    margin-left: 18px;
+    padding: 4px;
+    font-size: 14px;
+  }
 }
 
 /* animation to show the message */
@@ -669,6 +707,20 @@ input[type="text"]::placeholder {
   border-radius: 4px;
 }
 
+/* here starts responsive design of the message delete */
+@media (max-width: 1200px) {
+  .message-delete {
+    position: relative;
+    top: auto;
+    bottom: 420px;
+    left: 122px;
+    margin-left: auto;
+    margin-right: 240px;
+    font-size: 15px;
+    padding: 6px;
+  }
+}
+
 /* Here starts the information of the message edit and warning */
 
 .message-warning-edit {
@@ -682,6 +734,16 @@ input[type="text"]::placeholder {
   border-radius: 4px;
 }
 
+@media (max-width: 1200px) {
+  .message-warning-edit {
+    top: 20px;
+    margin-right: 0;
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+/* here starts responsive design of the message save edit */
 .message-save-edit {
   font-family: "Segoe UI", Geneva, Verdana, sans-serif;
   position: absolute;
@@ -691,4 +753,14 @@ input[type="text"]::placeholder {
   background-color: #4caf50;
   padding: 12px;
   border-radius: 4px;
+}
+
+@media (max-width: 1200px) {
+  .message-save-edit {
+    top: -5px;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 14px;
+    padding: 6px;
+  }
 }
