@@ -1,13 +1,14 @@
 interface Tasks {
-  id?: string;
-  title: string;
-  textarea: string;
-  date: string;
+    id: number;
+    title?: string | undefined;
+    textarea: string;
+    date: string;
 }
-interface FormRegister {
-  title: string;
-  textarea: string;
-  date: string;
+interface Tasks2 {
+    id: string;
+    title?: string | undefined;
+    textarea: string;
+    date: string;
 }
-export type { Tasks, FormRegister };
+export type { Tasks, Tasks2 };
 //# sourceMappingURL=designate.d.ts.map
