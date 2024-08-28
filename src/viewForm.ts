@@ -19,7 +19,8 @@ function viewForm() {
   allTasks.sort((a, b) => a.id - b.id);
   // map the register to the form for display
   allTasks.forEach((task: Tasks) => {
-    const dateDMY: string = task.date.split(",")[1];
+    const dateParts = task.date?.split(",");
+    const dateDMY = dateParts && dateParts.length > 1 ? dateParts[1] : "";
     const contexform = `
         <div id="form${task.id}" class="text-content-box" data-key="${task.id}">
           <div>
