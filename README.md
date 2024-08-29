@@ -45,20 +45,15 @@ npm run dev
 
 <h2> project features <strong>future project</strong> </h2>
 
-future project Create a web application that allows users to create, edit, and delete notes with his BD database. The application should have the following features:
+Project Create a web application that allows users to create, edit, and delete notes with localStorage. The application have the following features:
 
 - Create a new note
 - Edit an existing note
 - Delete a note
 - Display all notes
 - Sort notes by date
-- Search notes by title
-- Add a new note
-- Edit an existing note
-- Delete a note
-- Display all notes
-- Sort notes by date
-- Search notes by title
+- Validate when adding and editing
+- Reponsive web app 
 
 
 
