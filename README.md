@@ -43,7 +43,7 @@ npm install
 npm run dev
 ```
 
-<h2> project features <strong>future project</strong> </h2>
+<h2>  <strong> project features </strong> </h2>
 
 Project Create a web application that allows users to create, edit, and delete notes with localStorage. The application have the following features:
 
